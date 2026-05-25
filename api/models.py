@@ -1,40 +1,59 @@
 from django.db import models
-from django.contrib.postgres.indexes import GinIndex # Indexación avanzada de Postgres
-from django.contrib.postgres.search import SearchVectorField # Para búsquedas por palabras
+from django.contrib.postgres.indexes import GinIndex
+from django.contrib.postgres.search import SearchVectorField
+
 
 class ArancelBusquedaCompleta(models.Model):
-    # 1. Códigos Indexados (B-Tree automáticos para búsquedas exactas o parciales)
-    codigo_nacional = models.CharField(max_length=11, primary_key=True, help_text="10 u 11 dígitos")
+    codigo_nacional = models.CharField(max_length=11, primary_key=True)
     codigo_nandina = models.CharField(max_length=8, db_index=True)
     codigo_subpartida = models.CharField(max_length=6, db_index=True)
     codigo_partida = models.CharField(max_length=4, db_index=True)
     codigo_capitulo = models.CharField(max_length=2, db_index=True)
     id_seccion = models.CharField(max_length=10, db_index=True)
-
-    # 2. Textos de descripción (Lo que el usuario va a escribir)
-    descripcion_mercancia = models.TextField(help_text="Glosa específica del arancel")
+    descripcion_mercancia = models.TextField()
     descripcion_capitulo = models.TextField(blank=True, null=True)
     descripcion_seccion = models.TextField(blank=True, null=True)
-
-    # 3. Métricas Financieras y Restricciones (Para filtrar por "Aspectos")
-    ga_porcentaje = models.DecimalField(max_digits=5, decimal_places=2, db_index=True) # Filtrar por aranceles altos/bajos
+    ga_porcentaje = models.DecimalField(max_digits=5, decimal_places=2, db_index=True)
     ice_porcentaje = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     iehd = models.CharField(max_length=100, blank=True, null=True)
     unidad_medida = models.CharField(max_length=20, blank=True, null=True)
-    
-    # 4. Aspectos Legales y Acuerdos (Búsqueda por certificaciones o convenios)
-    documento_adicional = models.TextField(blank=True, null=True, help_text="Ej: SENASAG, IBMETRO")
-    preferencia_arancelaria_ace = models.TextField(blank=True, null=True, help_text="Ej: ACE 36, CAN")
-
-    # 5. EL SECRETO DE LA VELOCIDAD: Vector de búsqueda de Postgres
-    # Almacena de forma precomputada las palabras clave de las descripciones y documentos
+    documento_adicional = models.TextField(blank=True, null=True)
+    preferencia_arancelaria_ace = models.TextField(blank=True, null=True)
     search_vector = SearchVectorField(null=True, blank=True)
 
     class Meta:
-        # Creamos un índice GIN. Esto hace que buscar "sardinas" en millones de filas sea instantáneo
         indexes = [
             GinIndex(fields=['search_vector'], name='arancel_search_vector_idx')
         ]
 
     def __str__(self):
         return f"{self.codigo_nacional} - {self.descripcion_mercancia[:30]}"
+
+
+class NomenclaturaArancelaria(models.Model):
+    NIVELES = [
+        ('CAPITULO',            'Capítulo'),
+        ('PARTIDA',             'Partida'),
+        ('AGRUPACION',          'Agrupación'),
+        ('SUBPARTIDA_SA',       'Subpartida SA'),
+        ('SUBPARTIDA_NACIONAL', 'Subpartida Nacional'),
+    ]
+
+    parent = models.ForeignKey('self', null=True, blank=True,
+                               on_delete=models.CASCADE, related_name='hijos')
+    nivel = models.CharField(max_length=25, choices=NIVELES)
+    codigo_oficial = models.CharField(max_length=20, null=True, blank=True, db_index=True)
+    descripcion = models.TextField()
+    orden = models.IntegerField(default=0)
+    is_leaf = models.BooleanField(default=False)
+    ga_porcentaje = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    ice_porcentaje = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    unidad_medida = models.CharField(max_length=20, null=True, blank=True)
+    doc_adicional = models.TextField(null=True, blank=True)
+    preferencias = models.TextField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['orden']
+
+    def __str__(self):
+        return f"[{self.nivel}] {self.codigo_oficial or 'AGR'} — {self.descripcion[:40]}"

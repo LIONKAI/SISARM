@@ -37,16 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Librerías de terceros
-    'rest_framework',
-    'corsheaders',
+    'django.contrib.postgres',
     # Mis aplicaciones
     'aduanas',
     'api',
+    'corsheaders', 
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
 
     'corsheaders.middleware.CorsMiddleware', # <--- Añadir aquí
@@ -137,3 +138,4 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+CORS_ALLOW_ALL_ORIGINS = True

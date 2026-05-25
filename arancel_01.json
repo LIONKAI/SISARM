@@ -1,0 +1,602 @@
+{
+  "id": "01",
+  "nivel": "CAPITULO",
+  "codigo_oficial": "01",
+  "descripcion": "ANIMALES VIVOS",
+  "is_leaf": false,
+  "children": [
+    {
+      "id": "01.01",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "01.01",
+      "descripcion": "Caballos, asnos, mulos y burdéganos, vivos.",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "AGR_01_1_3174",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Caballos:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0101.21.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0101.21.00.00",
+              "descripcion": "- - Reproductores de raza pura",
+              "is_leaf": true,
+              "ga_porcentaje": "5",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0101.29",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0101.29",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0101.29.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0101.29.10.00",
+                  "descripcion": "- - - Para carrera",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "u"
+                },
+                {
+                  "id": "0101.29.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0101.29.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "u"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0101.30.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0101.30.00.00",
+          "descripcion": "- Asnos",
+          "is_leaf": true,
+          "ga_porcentaje": "10",
+          "unidad_medida": "u"
+        },
+        {
+          "id": "0101.90.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0101.90.00.00",
+          "descripcion": "- Los demás",
+          "is_leaf": true,
+          "ga_porcentaje": "10",
+          "unidad_medida": "u"
+        }
+      ]
+    },
+    {
+      "id": "01.02",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "01.02",
+      "descripcion": "Animales vivos de la especie bovina.",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "AGR_01_1_7787",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Bovinos domésticos:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0102.21.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0102.21.00.00",
+              "descripcion": "- - Reproductores de raza pura",
+              "is_leaf": true,
+              "ga_porcentaje": "0",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0102.29",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0102.29",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0102.29.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0102.29.10.00",
+                  "descripcion": "- - - Para lidia",
+                  "is_leaf": true,
+                  "ga_porcentaje": "0",
+                  "unidad_medida": "u"
+                },
+                {
+                  "id": "0102.29.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0102.29.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "0",
+                  "unidad_medida": "u"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AGR_01_1_2629",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Búfalos:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0102.31.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0102.31.00.00",
+              "descripcion": "- - Reproductores de raza pura",
+              "is_leaf": true,
+              "ga_porcentaje": "0",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0102.39.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0102.39.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "0",
+              "unidad_medida": "u"
+            }
+          ]
+        },
+        {
+          "id": "0102.90.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0102.90.00.00",
+          "descripcion": "- Los demás",
+          "is_leaf": true,
+          "ga_porcentaje": "0",
+          "unidad_medida": "u"
+        }
+      ]
+    },
+    {
+      "id": "01.03",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "01.03",
+      "descripcion": "Animales vivos de la especie porcina.",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "0103.10.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0103.10.00.00",
+          "descripcion": "- Reproductores de raza pura",
+          "is_leaf": true,
+          "ga_porcentaje": "5",
+          "unidad_medida": "u"
+        },
+        {
+          "id": "AGR_01_1_6246",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Los demás:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0103.91.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0103.91.00.00",
+              "descripcion": "- - De peso inferior a",
+              "is_leaf": true,
+              "ga_porcentaje": "50",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0103.92.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0103.92.00.00",
+              "descripcion": "- - De peso superior o igual a",
+              "is_leaf": true,
+              "ga_porcentaje": "50",
+              "unidad_medida": "kg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01.04",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "01.04",
+      "descripcion": "Animales vivos de las especies ovina o caprina.",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "0104.10",
+          "nivel": "SUBPARTIDA_SA",
+          "codigo_oficial": "0104.10",
+          "descripcion": "- De la especie ovina:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0104.10.10.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0104.10.10.00",
+              "descripcion": "- - Reproductores de raza pura",
+              "is_leaf": true,
+              "ga_porcentaje": "5",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0104.10.90.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0104.10.90.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "u"
+            }
+          ]
+        },
+        {
+          "id": "0104.20",
+          "nivel": "SUBPARTIDA_SA",
+          "codigo_oficial": "0104.20",
+          "descripcion": "- De la especie caprina:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0104.20.10.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0104.20.10.00",
+              "descripcion": "- - Reproductores de raza pura",
+              "is_leaf": true,
+              "ga_porcentaje": "5",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0104.20.90.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0104.20.90.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "u"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01.05",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "01.05",
+      "descripcion": "Gallos, gallinas, patos, gansos, pavos (gallipavos) y pintadas, de las",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "AGR_01_1_7580",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- De peso inferior o igual a 185 g:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0105.11.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0105.11.00.00",
+              "descripcion": "- - Aves de la especie Gallus domesticus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0105.12.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0105.12.00.00",
+              "descripcion": "- - Pavos (gallipavos)",
+              "is_leaf": true,
+              "ga_porcentaje": "5",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0105.13.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0105.13.00.00",
+              "descripcion": "- - Patos",
+              "is_leaf": true,
+              "ga_porcentaje": "5",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0105.14.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0105.14.00.00",
+              "descripcion": "- - Gansos",
+              "is_leaf": true,
+              "ga_porcentaje": "5",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0105.15.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0105.15.00.00",
+              "descripcion": "- - Pintadas",
+              "is_leaf": true,
+              "ga_porcentaje": "5",
+              "unidad_medida": "u"
+            }
+          ]
+        },
+        {
+          "id": "AGR_01_1_6246",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Los demás:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0105.94.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0105.94.00.00",
+              "descripcion": "- - Aves de la especie Gallus domesticus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0105.99.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0105.99.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "u"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01.06",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "01.06",
+      "descripcion": "Los demás animales vivos.",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "AGR_01_1_28",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Mamíferos:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0106.11.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0106.11.00.00",
+              "descripcion": "- - Primates",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "AGR_01_2_8824",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Ballenas,\tdelfines\ty\tmarsopas\t(mamíferos\tdel\torden\tCetacea);\tmanatíes\ty",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0106.13",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0106.13",
+              "descripcion": "- - Camellos y demás camélidos (Camelidae):",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "AGR_01_3_7793",
+                  "nivel": "AGRUPACION",
+                  "codigo_oficial": null,
+                  "descripcion": "- - - Camélidos sudamericanos:",
+                  "is_leaf": false,
+                  "children": [
+                    {
+                      "id": "0106.13.11",
+                      "nivel": "NANDINA",
+                      "codigo_oficial": "0106.13.11",
+                      "descripcion": "- - - - Llamas (Lama glama), incluidos los guanacos:",
+                      "is_leaf": false,
+                      "children": [
+                        {
+                          "id": "0106.13.11.10",
+                          "nivel": "SUBPARTIDA_NACIONAL",
+                          "codigo_oficial": "0106.13.11.10",
+                          "descripcion": "- - - - - Llamas (Lama glama)",
+                          "is_leaf": true,
+                          "ga_porcentaje": "20",
+                          "unidad_medida": "u"
+                        },
+                        {
+                          "id": "0106.13.11.20",
+                          "nivel": "SUBPARTIDA_NACIONAL",
+                          "codigo_oficial": "0106.13.11.20",
+                          "descripcion": "- - - - - Guanacos (Lama guanicoe)",
+                          "is_leaf": true,
+                          "ga_porcentaje": "20",
+                          "unidad_medida": "u"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "0106.13.12.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0106.13.12.00",
+                      "descripcion": "- - - - Alpacas (Lama pacus)",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "u"
+                    },
+                    {
+                      "id": "0106.13.19.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0106.13.19.00",
+                      "descripcion": "- - - - Los demás",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "u"
+                    }
+                  ]
+                },
+                {
+                  "id": "0106.13.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0106.13.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "u"
+                }
+              ]
+            },
+            {
+              "id": "0106.14.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0106.14.00.00",
+              "descripcion": "- - Conejos y liebres",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0106.19.00",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0106.19.00",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0106.19.00.10",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0106.19.00.10",
+                  "descripcion": "- - - Perros y gatos domésticos",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "u"
+                },
+                {
+                  "id": "0106.19.00.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0106.19.00.90",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "u"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0106.20.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0106.20.00.00",
+          "descripcion": "- Reptiles (incluidas las serpientes y tortugas de mar)",
+          "is_leaf": true,
+          "ga_porcentaje": "20",
+          "unidad_medida": "u"
+        },
+        {
+          "id": "AGR_01_1_450",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Aves:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0106.31.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0106.31.00.00",
+              "descripcion": "- - Aves de rapiña",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0106.32.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0106.32.00.00",
+              "descripcion": "- - Psitaciformes (incluidos los loros, guacamayos, cacatúas y demás",
+              "is_leaf": true,
+              "ga_porcentaje": "",
+              "unidad_medida": ""
+            },
+            {
+              "id": "0106.33.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0106.33.00.00",
+              "descripcion": "- - Avestruces; emúes (Dromaius novaehollandiae)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0106.39.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0106.39.00.00",
+              "descripcion": "- - Las demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            }
+          ]
+        },
+        {
+          "id": "AGR_01_1_8137",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Insectos:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0106.41.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0106.41.00.00",
+              "descripcion": "- - Abejas",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0106.49.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0106.49.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            }
+          ]
+        },
+        {
+          "id": "0106.90.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0106.90.00.00",
+          "descripcion": "- Los demás",
+          "is_leaf": true,
+          "ga_porcentaje": "10",
+          "unidad_medida": "u"
+        }
+      ]
+    }
+  ]
+}

@@ -17,8 +17,8 @@ export default function BuscadorArancel() {
         setCargando(true);
         try {
             // ---> TU CÓDIGO ADAPTADO AQUÍ <---
-            const respuesta = await axios.get(`http://127.0.0.1:8080/api/buscar/?q=${valorABuscar}`);
-            setResultados(respuesta.data); // Guarda la lista que envió Django en el estado
+            const respuesta = await axios.get(`http://127.0.0.1:8080/api/buscar-nomenclatura/?q=${valorABuscar}`);
+            setResultados(respuesta.data.resultados); // Guarda la lista que envió Django en el estado
         } catch (error) {
             console.error("Error al conectar con el motor de búsqueda:", error);
         } finally {
@@ -61,12 +61,13 @@ export default function BuscadorArancel() {
                 </thead>
                 <tbody>
                     {resultados.map((item) => (
-                        <tr key={item.codigo_nacional}>
-                            <td style={{ fontWeight: 'bold' }}>{item.codigo_nacional}</td>
-                            <td>{item.descripcion_mercancia}</td>
+                        <tr key={item.codigo_oficial}>
+                            <td style={{ fontWeight: 'bold' }}>{item.codigo_oficial}</td>
+                            <td>{item.descripcion}</td>
                             <td align="center">{item.ga_porcentaje}%</td>
                             <td align="center">{item.unidad_medida}</td>
-                            <td style={{ color: '#d32f2f', fontSize: '12px' }}>{item.documento_adicional || 'Ninguno'}</td>
+                            <td style={{ color: '#d32f2f', fontSize: '12px' }}>{item.doc_adicional || 'Ninguno'}</td>
+                            <td style={{ fontSize: '11px', color: '#9ca3af' }}>{item.ruta}</td>
                         </tr>
                     ))}
                     {!cargando && resultados.length === 0 && textoDeLaBarra && (
