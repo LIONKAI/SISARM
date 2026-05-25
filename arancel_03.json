@@ -1,0 +1,3021 @@
+{
+  "id": "03",
+  "nivel": "CAPITULO",
+  "codigo_oficial": "03",
+  "descripcion": "PESCADOS Y CRUSTÁCEOS, MOLUSCOS Y DEMÁS INVERTEBRADOS ACUÁTICOS",
+  "is_leaf": false,
+  "children": [
+    {
+      "id": "03.01",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "03.01",
+      "descripcion": "Peces vivos.",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "AGR_03_1_6640",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Peces ornamentales:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0301.11.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0301.11.00.00",
+              "descripcion": "- - De agua dulce",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0301.19.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0301.19.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_6294",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Los demás peces vivos:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "AGR_03_2_5518",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Truchas (Salmo trutta, Oncorhynchus mykiss, Oncorhynchus clarki,",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0301.91.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0301.91.10.00",
+                  "descripcion": "- - - Para reproducción o cría industrial",
+                  "is_leaf": true,
+                  "ga_porcentaje": "5",
+                  "unidad_medida": "u"
+                },
+                {
+                  "id": "0301.91.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0301.91.90.00",
+                  "descripcion": "- - - Las demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "0301.92.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0301.92.00.00",
+              "descripcion": "- - Anguilas (Anguilla spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_5057",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Carpas (Cyprinus spp., Carassius spp., Ctenopharyngodon idellus,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0301.94.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0301.94.00.00",
+              "descripcion": "- - Atunes comunes o de aleta azul, del Atlántico y del Pacífico (Thunnus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0301.95.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0301.95.00.00",
+              "descripcion": "- - Atunes del sur (Thunnus maccoyii)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0301.99",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0301.99",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "AGR_03_3_6622",
+                  "nivel": "AGRUPACION",
+                  "codigo_oficial": null,
+                  "descripcion": "- - - Para reproducción o cría industrial:",
+                  "is_leaf": false,
+                  "children": [
+                    {
+                      "id": "0301.99.11.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0301.99.11.00",
+                      "descripcion": "- - - - Tilapia",
+                      "is_leaf": true,
+                      "ga_porcentaje": "5",
+                      "unidad_medida": "u"
+                    },
+                    {
+                      "id": "0301.99.19",
+                      "nivel": "NANDINA",
+                      "codigo_oficial": "0301.99.19",
+                      "descripcion": "- - - - Los demás:",
+                      "is_leaf": false,
+                      "children": [
+                        {
+                          "id": "0301.99.19.10",
+                          "nivel": "SUBPARTIDA_NACIONAL",
+                          "codigo_oficial": "0301.99.19.10",
+                          "descripcion": "- - - - - Paiche (Arapaima gigas)",
+                          "is_leaf": true,
+                          "ga_porcentaje": "5",
+                          "unidad_medida": "u"
+                        },
+                        {
+                          "id": "0301.99.19.90",
+                          "nivel": "SUBPARTIDA_NACIONAL",
+                          "codigo_oficial": "0301.99.19.90",
+                          "descripcion": "- - - - - Los demás",
+                          "is_leaf": true,
+                          "ga_porcentaje": "5",
+                          "unidad_medida": "u"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "0301.99.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0301.99.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03.02",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "03.02",
+      "descripcion": "Pescado fresco o refrigerado, excepto los filetes y demás carne de",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "AGR_03_1_6984",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Salmónidos, excepto los despojos comestibles de pescado de las",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "AGR_03_2_5518",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Truchas (Salmo trutta, Oncorhynchus mykiss, Oncorhynchus clarki,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "AGR_03_2_8441",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Salmones\tdel\tPacífico\t(Oncorhynchus nerka, Oncorhynchus gorbuscha,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0302.14.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.14.00.00",
+              "descripcion": "- - Salmones del Atlántico (Salmo salar) y salmones del Danubio (Hucho",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.19.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.19.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_6703",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pescados planos  (Pleuronectidae, Bothidae, Cynoglossidae, Soleidae,",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0302.21.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.21.00.00",
+              "descripcion": "- - Fletanes («halibut») (Reinhardtius hippoglossoides, Hippoglossus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.22.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.22.00.00",
+              "descripcion": "- - Sollas (Pleuronectes platessa)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.23.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.23.00.00",
+              "descripcion": "- - Lenguados (Solea spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.24.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.24.00.00",
+              "descripcion": "- - Rodaballos («turbots») (Psetta maxima)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.29.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.29.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_9382",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Atunes (del género Thunnus), listados (bonitos de vientre rayado)",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0302.31.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.31.00.00",
+              "descripcion": "- - Albacoras o atunes blancos (Thunnus alalunga)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.32.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.32.00.00",
+              "descripcion": "- - Atunes de aleta amarilla (rabiles) (Thunnus albacares)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.33.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.33.00.00",
+              "descripcion": "- - Listados (bonitos de vientre rayado) (Katsuwonus pelamis)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.34.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.34.00.00",
+              "descripcion": "- - Patudos o atunes ojo grande (Thunnus obesus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.35.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.35.00.00",
+              "descripcion": "- - Atunes comunes o de aleta azul, del Atlántico y del Pacífico (Thunnus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.36.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.36.00.00",
+              "descripcion": "- - Atunes del sur (Thunnus maccoyii)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.39.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.39.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_1296",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Arenques (Clupea harengus, Clupea pallasii), anchoas (Engraulis spp.),",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0302.41.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.41.00.00",
+              "descripcion": "- - Arenques (Clupea harengus, Clupea pallasii)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.42.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.42.00.00",
+              "descripcion": "- - Anchoas (Engraulis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.43.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.43.00.00",
+              "descripcion": "- - Sardinas (Sardina pilchardus, Sardinops spp.), sardinelas (Sardinella spp.) y",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.44.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.44.00.00",
+              "descripcion": "- - Caballas (Scomber scombrus, Scomber australasicus, Scomber japonicus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.45.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.45.00.00",
+              "descripcion": "- - Jureles (Trachurus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.46.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.46.00.00",
+              "descripcion": "- - Cobias (Rachycentron canadum)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.47.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.47.00.00",
+              "descripcion": "- - Peces espada (Xiphias gladius)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.49.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.49.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_4076",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pescados de las familias Bregmacerotidae, Euclichthyidae, Gadidae,",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0302.51.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.51.00.00",
+              "descripcion": "- - Bacalaos (Gadus morhua, Gadus ogac, Gadus macrocephalus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.52.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.52.00.00",
+              "descripcion": "- - Eglefinos (Melanogrammus aeglefinus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.53.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.53.00.00",
+              "descripcion": "- - Carboneros (Pollachius virens)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.54.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.54.00.00",
+              "descripcion": "- - Merluzas (Merluccius spp., Urophycis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.55.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.55.00.00",
+              "descripcion": "- - Abadejos de Alaska (Theragra chalcogramma)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.56.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.56.00.00",
+              "descripcion": "- - Bacaladillas (Micromesistius poutassou, Micromesistius australis)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.59.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.59.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_8099",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Tilapias (Oreochromis spp.), bagres o peces gato (Pangasius spp.,",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0302.71.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.71.00.00",
+              "descripcion": "- - Tilapias (Oreochromis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.72.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.72.00.00",
+              "descripcion": "- - Bagres o peces gato (Pangasius spp., Silurus spp., Clarias spp., Ictalurus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_5057",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Carpas (Cyprinus spp., Carassius spp., Ctenopharyngodon idellus,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0302.74.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.74.00.00",
+              "descripcion": "- - Anguilas (Anguilla spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.79.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.79.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_3943",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Los demás pescados, excepto los despojos comestibles de pescado de",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0302.81.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.81.00.00",
+              "descripcion": "- - Cazones y demás escualos",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.82.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.82.00.00",
+              "descripcion": "- - Rayas (Rajidae)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.83.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.83.00.00",
+              "descripcion": "- - Austromerluzas antárticas y austromerluzas negras (merluzas negras,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.84.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.84.00.00",
+              "descripcion": "- - Róbalos (Dicentrarchus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.85.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.85.00.00",
+              "descripcion": "- - Sargos (Doradas, Espáridos)* (Sparidae)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.89.00",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0302.89.00",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0302.89.00.10",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0302.89.00.10",
+                  "descripcion": "- - - Paiche (Arapaima gigas)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0302.89.00.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0302.89.00.90",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_8398",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Hígados, huevas, lechas, aletas, cabezas, colas, vejigas natatorias y demás",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0302.91.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.91.00.00",
+              "descripcion": "- - Hígados, huevas y lechas",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.92.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0302.92.00.00",
+              "descripcion": "- - Aletas de tiburón",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0302.99.00",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0302.99.00",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "AGR_03_3_9864",
+                  "nivel": "AGRUPACION",
+                  "codigo_oficial": null,
+                  "descripcion": "- - - De truchas (Salmo trutta, Oncorhynchus mykiss, Oncorhynchus clarki,",
+                  "is_leaf": false,
+                  "children": []
+                },
+                {
+                  "id": "0302.99.00.20",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0302.99.00.20",
+                  "descripcion": "- - - De salmónidos, excepto de salmones del Pacifico, salmones del",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0302.99.00.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0302.99.00.90",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03.03",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "03.03",
+      "descripcion": "Pescado congelado, excepto los filetes y demás carne de pescado de la",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "AGR_03_1_6984",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Salmónidos, excepto los despojos comestibles de pescado de las",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0303.11.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.11.00.00",
+              "descripcion": "- - Salmones rojos (Oncorhynchus nerka)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_8802",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Los\tdemás\tsalmones\tdel\tPacífico\t(Oncorhynchus gorbuscha,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0303.13.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.13.00.00",
+              "descripcion": "- - Salmones del Atlántico (Salmo salar) y salmones del Danubio (Hucho",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_5518",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Truchas (Salmo trutta, Oncorhynchus mykiss, Oncorhynchus clarki,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0303.19.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.19.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_8099",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Tilapias (Oreochromis spp.), bagres o peces gato (Pangasius spp.,",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0303.23.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.23.00.00",
+              "descripcion": "- - Tilapias (Oreochromis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.24.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.24.00.00",
+              "descripcion": "- - Bagres o peces gato (Pangasius spp., Silurus spp., Clarias spp., Ictalurus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_5057",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Carpas (Cyprinus spp., Carassius spp., Ctenopharyngodon idellus,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0303.26.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.26.00.00",
+              "descripcion": "- - Anguilas (Anguilla spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.29.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.29.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_1639",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pescados planos (Pleuronectidae, Bothidae, Cynoglossidae, Soleidae,",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0303.31.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.31.00.00",
+              "descripcion": "- - Fletanes («halibut») (Reinhardtius hippoglossoides, Hippoglossus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.32.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.32.00.00",
+              "descripcion": "- - Sollas (Pleuronectes platessa)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.33.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.33.00.00",
+              "descripcion": "- - Lenguados (Solea spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.34.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.34.00.00",
+              "descripcion": "- - Rodaballos («turbots») (Psetta maxima)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.39.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.39.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_9382",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Atunes (del género Thunnus), listados (bonitos de vientre rayado)",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0303.41.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.41.00.00",
+              "descripcion": "- - Albacoras o atunes blancos (Thunnus alalunga)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.42.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.42.00.00",
+              "descripcion": "- - Atunes de aleta amarilla (rabiles) (Thunnus albacares)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.43.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.43.00.00",
+              "descripcion": "- - Listados (bonitos de vientre rayado) (Katsuwonus pelamis)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.44.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.44.00.00",
+              "descripcion": "- - Patudos o atunes ojo grande (Thunnus obesus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.45.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.45.00.00",
+              "descripcion": "- - Atunes comunes o de aleta azul, del Atlántico y del Pacífico (Thunnus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.46.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.46.00.00",
+              "descripcion": "- - Atunes del sur (Thunnus maccoyii)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.49.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.49.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_1296",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Arenques (Clupea harengus, Clupea pallasii), anchoas (Engraulis spp.),",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0303.51.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.51.00.00",
+              "descripcion": "- - Arenques (Clupea harengus, Clupea pallasii)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.53.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.53.00.00",
+              "descripcion": "- - Sardinas (Sardina pilchardus, Sardinops spp.), sardinelas (Sardinella spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.54.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.54.00.00",
+              "descripcion": "- - Caballas (Scomber scombrus, Scomber australasicus, Scomber japonicus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.55.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.55.00.00",
+              "descripcion": "- - Jureles (Trachurus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.56.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.56.00.00",
+              "descripcion": "- - Cobias (Rachycentron canadum)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.57.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.57.00.00",
+              "descripcion": "- - Peces espada (Xiphias gladius)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.59.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.59.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_9184",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pescados de las familias  Bregmacerotidae, Euclichthyidae, Gadidae,",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0303.63.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.63.00.00",
+              "descripcion": "- - Bacalaos (Gadus morhua, Gadus ogac, Gadus macrocephalus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.64.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.64.00.00",
+              "descripcion": "- - Eglefinos (Melanogrammus aeglefinus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.65.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.65.00.00",
+              "descripcion": "- - Carboneros (Pollachius virens)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.66.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.66.00.00",
+              "descripcion": "- - Merluzas (Merluccius spp., Urophycis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.67.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.67.00.00",
+              "descripcion": "- - Abadejos de Alaska (Theragra chalcogramma)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.68.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.68.00.00",
+              "descripcion": "- - Bacaladillas (Micromesistius poutassou, Micromesistius australis)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.69.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.69.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_3943",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Los demás pescados, excepto los despojos comestibles de pescado de",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0303.81.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.81.00.00",
+              "descripcion": "- - Cazones y demás escualos",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.82.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.82.00.00",
+              "descripcion": "- - Rayas (Rajidae)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.83.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.83.00.00",
+              "descripcion": "- - Austromerluzas antárticas y austromerluzas negras (merluzas negras,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.84.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.84.00.00",
+              "descripcion": "- - Róbalos (Dicentrarchus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.89.00",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0303.89.00",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0303.89.00.10",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0303.89.00.10",
+                  "descripcion": "- - - Paiche (Arapaima gigas)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0303.89.00.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0303.89.00.90",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_6225",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Hígados, huevas y lechas, aletas, cabezas, colas, vejigas natatorias y",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0303.91.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.91.00.00",
+              "descripcion": "- - Hígados, huevas y lechas",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.92.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0303.92.00.00",
+              "descripcion": "- - Aletas de tiburón",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0303.99.00",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0303.99.00",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "AGR_03_3_9864",
+                  "nivel": "AGRUPACION",
+                  "codigo_oficial": null,
+                  "descripcion": "- - - De truchas (Salmo trutta, Oncorhynchus mykiss, Oncorhynchus clarki,",
+                  "is_leaf": false,
+                  "children": []
+                },
+                {
+                  "id": "0303.99.00.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0303.99.00.90",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03.04",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "03.04",
+      "descripcion": "Filetes y demás carne de pescado (incluso picada), frescos, refrigerados o",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "AGR_03_1_1319",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Filetes frescos o refrigerados de tilapias (Oreochromis spp.), bagres",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0304.31.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.31.00.00",
+              "descripcion": "- - Tilapias (Oreochromis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.32.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.32.00.00",
+              "descripcion": "- - Bagres o peces gato (Pangasius spp., Silurus spp., Clarias spp., Ictalurus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.33.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.33.00.00",
+              "descripcion": "- - Percas del Nilo (Lates niloticus)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.39.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.39.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_3316",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Filetes de los demás pescados, frescos o refrigerados:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "AGR_03_2_5838",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Salmones\tdel\tpacífico\t(Oncorhynchus nerka, Oncorhynchus gorbuscha,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "AGR_03_2_5518",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Truchas (Salmo trutta, Oncorhynchus mykiss, Oncorhynchus clarki,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0304.43.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.43.00.00",
+              "descripcion": "- - Pescados planos (Pleuronectidae, Bothidae, Cynoglossidae, Soleidae,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.44.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.44.00.00",
+              "descripcion": "- - Pescados de las familias Bregmacerotidae, Euclichthyidae, Gadidae,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.45.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.45.00.00",
+              "descripcion": "- - Peces espada (Xiphias gladius)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.46.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.46.00.00",
+              "descripcion": "- - Austromerluzas antárticas y austromerluzas negras (merluzas negras,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.47.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.47.00.00",
+              "descripcion": "- - Cazones y demás escualos",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.48.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.48.00.00",
+              "descripcion": "- - Rayas (Rajidae)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.49.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.49.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_1393",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Los demás, frescos o refrigerados:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "AGR_03_2_8099",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Tilapias (Oreochromis spp.), bagres o peces gato (Pangasius spp.,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0304.52.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.52.00.00",
+              "descripcion": "- - Salmónidos",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.53.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.53.00.00",
+              "descripcion": "- - Pescados de las familias Bregmacerotidae, Euclichthyidae, Gadidae,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.54.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.54.00.00",
+              "descripcion": "- - Peces espada (Xiphias gladius)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.55.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.55.00.00",
+              "descripcion": "- - Austromerluzas antárticas y austromerluzas negras (merluzas negras,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.56.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.56.00.00",
+              "descripcion": "- - Cazones y demás escualos",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.57.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.57.00.00",
+              "descripcion": "- - Rayas (Rajidae)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.59.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.59.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_9866",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Filetes congelados de tilapias ( Oreochromis spp.), bagres o peces gato",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0304.61.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.61.00.00",
+              "descripcion": "- - Tilapias ( Oreochromis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.62.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.62.00.00",
+              "descripcion": "- - Bagres o peces gato (Pangasius spp., Silurus spp., Clarias spp., Ictalurus",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.63.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.63.00.00",
+              "descripcion": "- - Percas del Nilo ( Lates niloticus)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.69.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.69.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_231",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Filetes congelados de pescados de las familias Bregmacerotidae,",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0304.71.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.71.00.00",
+              "descripcion": "- - Bacalaos ( Gadus morhua, Gadus ogac, Gadus macrocephalus)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.72.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.72.00.00",
+              "descripcion": "- - Eglefinos (Melanogrammus aeglefinus)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.73.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.73.00.00",
+              "descripcion": "- - Carboneros ( Pollachius virens)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.74.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.74.00.00",
+              "descripcion": "- - Merluzas ( Merluccius spp., Urophycis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.75.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.75.00.00",
+              "descripcion": "- - Abadejos de Alaska ( Theragra chalcogramma)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.79.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.79.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_4245",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Filetes congelados de los demás pescados:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "AGR_03_2_8441",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Salmones\tdel\tPacífico\t(Oncorhynchus nerka, Oncorhynchus gorbuscha,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "AGR_03_2_5518",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Truchas (Salmo trutta, Oncorhynchus mykiss, Oncorhynchus clarki,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0304.83.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.83.00.00",
+              "descripcion": "- - Pescados planos ( Pleuronectidae, Bothidae, Cynoglossidae, Soleidae,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.84.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.84.00.00",
+              "descripcion": "- - Peces espada ( Xiphias gladius)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.85.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.85.00.00",
+              "descripcion": "- - Austromerluzas antárticas y austromerluzas negras (merluzas negras,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.86.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.86.00.00",
+              "descripcion": "- - Arenques ( Clupea harengus, Clupea pallasii)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.87.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.87.00.00",
+              "descripcion": "- - Atunes (del género Thunnus), listados (bonitos de vientre rayado)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.88.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.88.00.00",
+              "descripcion": "- - Cazones, demás escualos y rayas ( Rajidae)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.89.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.89.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_4983",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Las demás, congelados:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0304.91.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.91.00.00",
+              "descripcion": "- - Peces espada ( Xiphias gladius)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.92.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.92.00.00",
+              "descripcion": "- - Austromerluzas antárticas y austromerluzas negras (merluzas negras,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_9660",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Tilapias ( Oreochromis spp.), bagres o peces gato (Pangasius spp.,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0304.94.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.94.00.00",
+              "descripcion": "- - Abadejos de Alaska (T heragra chalcogramma)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_4076",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Pescados de las familias Bregmacerotidae, Euclichthyidae, Gadidae,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0304.96.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.96.00.00",
+              "descripcion": "- - Cazones y demás escualos",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.97.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0304.97.00.00",
+              "descripcion": "- - Rayas ( Rajidae)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0304.99.00",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0304.99.00",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0304.99.00.10",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0304.99.00.10",
+                  "descripcion": "- - - Paiche (Arapaima gigas)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0304.99.00.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0304.99.00.90",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03.05",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "03.05",
+      "descripcion": "Pescado seco, salado o en salmuera; pescado ahumado, incluso cocido",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "0305.20.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0305.20.00.00",
+          "descripcion": "- Hígados, huevas y lechas, de pescado, secos, ahumados, salados o en",
+          "is_leaf": true,
+          "ga_porcentaje": "10",
+          "unidad_medida": "kg"
+        },
+        {
+          "id": "AGR_03_1_6423",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Filetes de pescado, secos, salados o en salmuera, sin ahumar:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "AGR_03_2_9660",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Tilapias ( Oreochromis spp.), bagres o peces gato (Pangasius spp.,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0305.32.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.32.00.00",
+              "descripcion": "- - Pescados de las familias Bregmacerotidae, Euclichthyidae, Gadidae,",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0305.39",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0305.39",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0305.39.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0305.39.10.00",
+                  "descripcion": "- - - De bacalaos ( Gadus morhua, Gadus ogac, Gadus macrocephalus)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0305.39.90",
+                  "nivel": "NANDINA",
+                  "codigo_oficial": "0305.39.90",
+                  "descripcion": "- - - Los demás:",
+                  "is_leaf": false,
+                  "children": [
+                    {
+                      "id": "0305.39.90.10",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0305.39.90.10",
+                      "descripcion": "- - - - Paiche (Arapaima gigas)",
+                      "is_leaf": true,
+                      "ga_porcentaje": "10",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0305.39.90.90",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0305.39.90.90",
+                      "descripcion": "- - - - Los demás",
+                      "is_leaf": true,
+                      "ga_porcentaje": "10",
+                      "unidad_medida": "kg"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_3458",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pescados\tahumados,\tincluidos\tlos\tfiletes,\t excepto\tlos\tdespojos",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "AGR_03_2_8441",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Salmones\tdel\tPacífico\t(Oncorhynchus nerka, Oncorhynchus gorbuscha,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0305.42.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.42.00.00",
+              "descripcion": "- - Arenques ( Clupea harengus, Clupea pallasii)",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_5518",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Truchas (Salmo trutta, Oncorhynchus mykiss, Oncorhynchus clarki,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "AGR_03_2_9660",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Tilapias ( Oreochromis spp.), bagres o peces gato (Pangasius spp.,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0305.49.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.49.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_860",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pescado seco, incluso salado, sin ahumar, excepto los despojos",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0305.51.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.51.00.00",
+              "descripcion": "- - Bacalaos ( Gadus morhua, Gadus ogac, Gadus macrocephalus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_9660",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Tilapias ( Oreochromis spp.), bagres o peces gato (Pangasius spp.,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "AGR_03_2_4076",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Pescados de las familias Bregmacerotidae, Euclichthyidae, Gadidae,",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0305.53.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0305.53.10.00",
+                  "descripcion": "- - - Merluzas ( Merluccius spp., Urophycis spp.)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0305.53.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0305.53.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "AGR_03_2_3045",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Arenques ( Clupea harengus, Clupea pallasii), anchoas ( Engraulis spp.),",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0305.59.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.59.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_1819",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pescado salado sin secar ni ahumar y pescado en salmuera, excepto los",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0305.61.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.61.00.00",
+              "descripcion": "- - Arenques ( Clupea harengus, Clupea pallasii)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0305.62.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.62.00.00",
+              "descripcion": "- - Bacalaos ( Gadus morhua, Gadus ogac, Gadus macrocephalus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0305.63.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.63.00.00",
+              "descripcion": "- - Anchoas ( Engraulis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "AGR_03_2_9660",
+              "nivel": "AGRUPACION",
+              "codigo_oficial": null,
+              "descripcion": "- - Tilapias ( Oreochromis spp.), bagres o peces gato (Pangasius spp.,",
+              "is_leaf": false,
+              "children": []
+            },
+            {
+              "id": "0305.69.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.69.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_7537",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Aletas, cabezas, colas, vejigas natatorias y demás despojos comestibles",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0305.71.00",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0305.71.00",
+              "descripcion": "- - Aletas de tiburón:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0305.71.00.10",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0305.71.00.10",
+                  "descripcion": "- - - Ahumadas",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0305.71.00.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0305.71.00.90",
+                  "descripcion": "- - - Las demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "0305.72.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0305.72.00.00",
+              "descripcion": "- - Cabezas, colas y vejigas natatorias, de pescado",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0305.79.00",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0305.79.00",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0305.79.00.10",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0305.79.00.10",
+                  "descripcion": "- - - Ahumadas",
+                  "is_leaf": true,
+                  "ga_porcentaje": "10",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0305.79.00.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0305.79.00.90",
+                  "descripcion": "- - - Las demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_3655",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Congelados:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0306.11.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.11.00.00",
+              "descripcion": "- - Langostas (Palinurus spp., Panulirus spp., Jasus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.12.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.12.00.00",
+              "descripcion": "- - Bogavantes (Homarus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.14.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.14.00.00",
+              "descripcion": "- - Cangrejos (excepto macruros)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.15.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.15.00.00",
+              "descripcion": "- - Cigalas (Nephrops norvegicus)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.16.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.16.00.00",
+              "descripcion": "- - Camarones, langostinos y demás decápodos Natantia de agua fría",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.17",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0306.17",
+              "descripcion": "- - Los demás camarones, langostinos y demás decápodos Natantia:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "AGR_03_3_764",
+                  "nivel": "AGRUPACION",
+                  "codigo_oficial": null,
+                  "descripcion": "- - - Langostinos (Géneros de la familia Penaeidae):",
+                  "is_leaf": false,
+                  "children": [
+                    {
+                      "id": "0306.17.11.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.17.11.00",
+                      "descripcion": "- - - - Enteros",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0306.17.12.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.17.12.00",
+                      "descripcion": "- - - - Colas sin caparazón",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0306.17.13.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.17.13.00",
+                      "descripcion": "- - - - Colas con caparazón, sin cocer en agua o vapor",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0306.17.14.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.17.14.00",
+                      "descripcion": "- - - - Colas con caparazón, cocidos en agua o vapor",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0306.17.19.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.17.19.00",
+                      "descripcion": "- - - - Los demás",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "kg"
+                    }
+                  ]
+                },
+                {
+                  "id": "AGR_03_3_5591",
+                  "nivel": "AGRUPACION",
+                  "codigo_oficial": null,
+                  "descripcion": "- - - Los demás:",
+                  "is_leaf": false,
+                  "children": [
+                    {
+                      "id": "0306.17.91.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.17.91.00",
+                      "descripcion": "- - - - Camarones de río de los géneros Macrobrachium",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0306.17.99.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.17.99.00",
+                      "descripcion": "- - - - Los demás",
+                      "is_leaf": true,
+                      "ga_porcentaje": "20",
+                      "unidad_medida": "kg"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "0306.19.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.19.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_4466",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Vivos, frescos o refrigerados:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0306.31.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.31.00.00",
+              "descripcion": "- - Langostas (Palinurus spp., Panulirus spp., Jasus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.32.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.32.00.00",
+              "descripcion": "- - Bogavantes (Homarus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.33.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.33.00.00",
+              "descripcion": "- - Cangrejos (excepto macruros)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.34.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.34.00.00",
+              "descripcion": "- - Cigalas (Nephrops norvegicus)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.35.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.35.00.00",
+              "descripcion": "- - Camarones, langostinos y demás decápodos Natantia, de agua fría",
+              "is_leaf": true,
+              "ga_porcentaje": "10",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.36",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0306.36",
+              "descripcion": "- - Los demás camarones, langostinos y demás decápodos Natantia:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "AGR_03_3_764",
+                  "nivel": "AGRUPACION",
+                  "codigo_oficial": null,
+                  "descripcion": "- - - Langostinos (Géneros de la familia Penaeidae):",
+                  "is_leaf": false,
+                  "children": [
+                    {
+                      "id": "0306.36.11.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.36.11.00",
+                      "descripcion": "- - - - Para reproducción o cría industrial",
+                      "is_leaf": true,
+                      "ga_porcentaje": "5",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0306.36.19.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.36.19.00",
+                      "descripcion": "- - - - Los demás",
+                      "is_leaf": true,
+                      "ga_porcentaje": "15",
+                      "unidad_medida": "kg"
+                    }
+                  ]
+                },
+                {
+                  "id": "AGR_03_3_5591",
+                  "nivel": "AGRUPACION",
+                  "codigo_oficial": null,
+                  "descripcion": "- - - Los demás:",
+                  "is_leaf": false,
+                  "children": [
+                    {
+                      "id": "0306.36.91.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.36.91.00",
+                      "descripcion": "- - - - Para reproducción o cría industrial",
+                      "is_leaf": true,
+                      "ga_porcentaje": "15",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0306.36.92.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.36.92.00",
+                      "descripcion": "- - - - Los demás camarones de río de los géneros Macrobrachium",
+                      "is_leaf": true,
+                      "ga_porcentaje": "15",
+                      "unidad_medida": "kg"
+                    },
+                    {
+                      "id": "0306.36.99.00",
+                      "nivel": "SUBPARTIDA_NACIONAL",
+                      "codigo_oficial": "0306.36.99.00",
+                      "descripcion": "- - - - Los demás",
+                      "is_leaf": true,
+                      "ga_porcentaje": "15",
+                      "unidad_medida": "kg"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "0306.39.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.39.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_5591",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Los demás:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0306.91.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.91.00.00",
+              "descripcion": "- - Langostas (Palinurus spp., Panulirus spp., Jasus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.92.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.92.00.00",
+              "descripcion": "- - Bogavantes (Homarus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.93.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.93.00.00",
+              "descripcion": "- - Cangrejos (excepto macruros)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.94.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.94.00.00",
+              "descripcion": "- - Cigalas (Nephrops norvegicus)",
+              "is_leaf": true,
+              "ga_porcentaje": "15",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0306.95",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0306.95",
+              "descripcion": "- - Camarones, langostinos y demás decápodos Natantia:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0306.95.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0306.95.10.00",
+                  "descripcion": "- - - Camarones de río de los géneros Macrobrachium",
+                  "is_leaf": true,
+                  "ga_porcentaje": "15",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0306.95.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0306.95.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "15",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "0306.99.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0306.99.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_9471",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Ostras:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0307.11.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.11.00.00",
+              "descripcion": "- - Vivas, frescas o refrigeradas",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.12.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.12.00.00",
+              "descripcion": "- - Congeladas",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.19.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.19.00.00",
+              "descripcion": "- - Las demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_7479",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Vieiras, volandeiras y demás moluscos de la familia Pectinidae:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0307.21",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0307.21",
+              "descripcion": "- - Vivos, frescos o refrigerados:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0307.21.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.21.10.00",
+                  "descripcion": "- - - Vieiras(concha de abanico)(Pecten jacobaeus)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0307.21.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.21.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "0307.22",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0307.22",
+              "descripcion": "- - Congelados:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0307.22.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.22.10.00",
+                  "descripcion": "- - - Vieiras(concha de abanico)(Pecten Jacobaeus)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0307.22.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.22.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "0307.29",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0307.29",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0307.29.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.29.10.00",
+                  "descripcion": "- - - Vieiras(concha de abanico)(Pecten Jacobaeus)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0307.29.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.29.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_2128",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Mejillones (Mytilus spp., Perna spp.):",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0307.31.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.31.00.00",
+              "descripcion": "- - Vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.32.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.32.00.00",
+              "descripcion": "- - Congelados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.39.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.39.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_8671",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Jibias (sepias) y globitos; calamares y potas:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0307.42.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.42.00.00",
+              "descripcion": "- - Vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.43.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.43.00.00",
+              "descripcion": "- - Congelados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.49.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.49.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_8059",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pulpos (Octopus spp.):",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0307.51.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.51.00.00",
+              "descripcion": "- - Vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.52.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.52.00.00",
+              "descripcion": "- - Congelados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.59.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.59.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "0307.60.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0307.60.00.00",
+          "descripcion": "- Caracoles, excepto los de mar",
+          "is_leaf": true,
+          "ga_porcentaje": "20",
+          "unidad_medida": "kg"
+        },
+        {
+          "id": "AGR_03_1_1190",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Almejas, berberechos y arcas (familias Arcidae, Arcticidae, Cardiidae,",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0307.71.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.71.00.00",
+              "descripcion": "- - Vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.72.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.72.00.00",
+              "descripcion": "- - Congelados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.79.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.79.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_575",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Abulones u orejas de mar (Haliotis spp.) y cobos (caracoles de mar)",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0307.81.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.81.00.00",
+              "descripcion": "- - Abulones orejas de mar (Haliotis spp.), vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0307.82.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.82.00.00",
+              "descripcion": "- - Cobos (caracoles de mar) (Strombus spp.), vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.83.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.83.00.00",
+              "descripcion": "- - Abulones orejas de mar (Haliotis spp.), congelados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0307.84.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.84.00.00",
+              "descripcion": "- - Cobos (caracoles de mar) (Strombus spp.), congelados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.87.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.87.00.00",
+              "descripcion": "- - Los demás abulones orejas de mar (Haliotis spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "u"
+            },
+            {
+              "id": "0307.88.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.88.00.00",
+              "descripcion": "- - Los demás cobos (caracoles de mar) (Strombus spp.)",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_5591",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Los demás:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0307.91.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.91.00.00",
+              "descripcion": "- - Vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0307.92",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0307.92",
+              "descripcion": "- - Congelados:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0307.92.10.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.92.10.00",
+                  "descripcion": "- - - Locos (chanque, caracoles de mar) (Concholepas concholepas)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0307.92.20.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.92.20.00",
+                  "descripcion": "- - - Lapas",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0307.92.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.92.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "0307.99",
+              "nivel": "SUBPARTIDA_SA",
+              "codigo_oficial": "0307.99",
+              "descripcion": "- - Los demás:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0307.99.20.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.99.20.00",
+                  "descripcion": "- - - Locos (chanque, caracoles de mar) (Concholepas concholepas)",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "0307.99.50.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0307.99.50.00",
+              "descripcion": "- - Lapas",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg",
+              "children": [
+                {
+                  "id": "0307.99.90.00",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0307.99.90.00",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_4853",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Pepinos de mar (Stichopus japonicus, Holothuroidea):",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0308.11.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0308.11.00.00",
+              "descripcion": "- - Vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0308.12.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0308.12.00.00",
+              "descripcion": "- - Congelados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0308.19.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0308.19.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "AGR_03_1_676",
+          "nivel": "AGRUPACION",
+          "codigo_oficial": null,
+          "descripcion": "- Erizos de mar (Strongylocentrotus spp., Paracentrotus lividus, Loxechinus",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0308.21.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0308.21.00.00",
+              "descripcion": "- - Vivos, frescos o refrigerados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0308.22.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0308.22.00.00",
+              "descripcion": "- - Congelados",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            },
+            {
+              "id": "0308.29.00.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0308.29.00.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        },
+        {
+          "id": "0308.30.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0308.30.00.00",
+          "descripcion": "- Medusas (Rhopilema spp.)",
+          "is_leaf": true,
+          "ga_porcentaje": "20",
+          "unidad_medida": "kg"
+        },
+        {
+          "id": "0308.90.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0308.90.00.00",
+          "descripcion": "- Los demás",
+          "is_leaf": true,
+          "ga_porcentaje": "20",
+          "unidad_medida": "kg"
+        }
+      ]
+    },
+    {
+      "id": "03.09",
+      "nivel": "PARTIDA",
+      "codigo_oficial": "03.09",
+      "descripcion": "Harina, polvo y «pellets» de pescado, crustáceos, moluscos y demás",
+      "is_leaf": false,
+      "children": [
+        {
+          "id": "0309.10.00.00",
+          "nivel": "SUBPARTIDA_NACIONAL",
+          "codigo_oficial": "0309.10.00.00",
+          "descripcion": "- De pescado",
+          "is_leaf": true,
+          "ga_porcentaje": "10",
+          "unidad_medida": "kg"
+        },
+        {
+          "id": "0309.90",
+          "nivel": "SUBPARTIDA_SA",
+          "codigo_oficial": "0309.90",
+          "descripcion": "- Los demás:",
+          "is_leaf": false,
+          "children": [
+            {
+              "id": "0309.90.10",
+              "nivel": "NANDINA",
+              "codigo_oficial": "0309.90.10",
+              "descripcion": "- - De crustáceos:",
+              "is_leaf": false,
+              "children": [
+                {
+                  "id": "0309.90.10.10",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0309.90.10.10",
+                  "descripcion": "- - - Congelados",
+                  "is_leaf": true,
+                  "ga_porcentaje": "15",
+                  "unidad_medida": "kg"
+                },
+                {
+                  "id": "0309.90.10.90",
+                  "nivel": "SUBPARTIDA_NACIONAL",
+                  "codigo_oficial": "0309.90.10.90",
+                  "descripcion": "- - - Los demás",
+                  "is_leaf": true,
+                  "ga_porcentaje": "20",
+                  "unidad_medida": "kg"
+                }
+              ]
+            },
+            {
+              "id": "0309.90.90.00",
+              "nivel": "SUBPARTIDA_NACIONAL",
+              "codigo_oficial": "0309.90.90.00",
+              "descripcion": "- - Los demás",
+              "is_leaf": true,
+              "ga_porcentaje": "20",
+              "unidad_medida": "kg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
