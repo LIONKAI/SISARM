@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const API = import.meta.env.VITE_API_URL;
+
 export default function BuscadorArancel() {
-    // 1. Estados para controlar el texto escrito y los resultados devueltos por Django
     const [textoDeLaBarra, setTextoDeLaBarra] = useState('');
     const [resultados, setResultados] = useState([]);
     const [cargando, setCargando] = useState(false);
 
-    // 2. FUNCIÓN DE BÚSQUEDA (Aquí es donde va tu código)
     const realizarBusqueda = async (valorABuscar) => {
         if (!valorABuscar.trim()) {
             setResultados([]);
             return;
         }
-
         setCargando(true);
         try {
-            // ---> TU CÓDIGO ADAPTADO AQUÍ <---
-            const respuesta = await axios.get(`http://127.0.0.1:8080/api/buscar-nomenclatura/?q=${valorABuscar}`);
-            setResultados(respuesta.data.resultados); // Guarda la lista que envió Django en el estado
+            const respuesta = await axios.get(`${API}/buscar-nomenclatura/?q=${valorABuscar}`);
+            setResultados(respuesta.data.resultados);
         } catch (error) {
             console.error("Error al conectar con el motor de búsqueda:", error);
         } finally {
@@ -26,21 +24,19 @@ export default function BuscadorArancel() {
         }
     };
 
-    // 3. Manejador del cambio de la barra de texto
     const handleInputChange = (e) => {
         const valor = e.target.value;
         setTextoDeLaBarra(valor);
-        realizarBusqueda(valor); // Busca en tiempo real mientras el despachante escribe
+        realizarBusqueda(valor);
     };
 
     return (
         <div style={{ padding: '20px', fontFamily: 'Arial' }}>
             <h2>Buscador del Arancel Aduanero Boliviano</h2>
-            
-            {/* Barra de entrada de texto */}
+
             <input
                 type="text"
-                placeholder="Busca por código, glosa, SENASAG, GA, etc..."
+                placeholder="Busque por texto"
                 value={textoDeLaBarra}
                 onChange={handleInputChange}
                 style={{ width: '100%', padding: '10px', fontSize: '16px', marginBottom: '20px' }}
@@ -48,7 +44,6 @@ export default function BuscadorArancel() {
 
             {cargando && <p>Buscando en la base de datos de aduanas...</p>}
 
-            {/* Tabla Dinámica para mostrar los resultados obtenidos instantáneamente */}
             <table border="1" cellPadding="10" style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                     <tr style={{ backgroundColor: '#f2f2f2' }}>
@@ -57,6 +52,7 @@ export default function BuscadorArancel() {
                         <th>GA %</th>
                         <th>Unidad</th>
                         <th>Documento Adicional</th>
+                        <th>Ruta</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,7 +68,7 @@ export default function BuscadorArancel() {
                     ))}
                     {!cargando && resultados.length === 0 && textoDeLaBarra && (
                         <tr>
-                            <td colSpan="5" align="center">No se encontraron mercancías por ese criterio.</td>
+                            <td colSpan="6" align="center">No se encontraron mercancías por ese criterio.</td>
                         </tr>
                     )}
                 </tbody>

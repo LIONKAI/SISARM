@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API = 'http://127.0.0.1:8080/api';
+const API = import.meta.env.VITE_API_URL;
 
 const NIVEL_COLORS = {
   capitulo:   { bg: '#1e3a5f', accent: '#3b82f6' },
@@ -205,7 +205,6 @@ export default function ExploradorArancel() {
   const lista = { overflowY: 'auto', flexGrow: 1, padding: '10px', display: 'flex', flexDirection: 'column', gap: '6px' };
   const vacio = (msg) => <div style={{ textAlign: 'center', color: '#9ca3af', padding: '30px 10px', fontSize: '13px' }}>{msg}</div>;
 
-  // VISTA 1: Solo capítulos (estado inicial)
   if (!capituloSel) {
     return (
       <div>
@@ -227,10 +226,8 @@ export default function ExploradorArancel() {
     );
   }
 
-  // VISTA 2: Capítulo seleccionado → columnas partidas + subpartidas
   return (
     <div>
-      {/* Migas de pan */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px',
         fontSize: '13px', marginBottom: '16px', flexWrap: 'wrap' }}>
         <button onClick={volverACapitulos} style={{
@@ -248,12 +245,10 @@ export default function ExploradorArancel() {
         </>}
       </div>
 
-      {/* Layout en dos columnas */}
       <div style={{ display: 'grid', gap: '16px',
         gridTemplateColumns: partidaSel ? '240px 1fr' : '1fr',
       }}>
 
-        {/* Columna izquierda: Partidas */}
         <div style={{ ...colBase, maxHeight: '560px' }}>
           {encabezado(NIVEL_COLORS.partida.bg,
             `📄 PARTIDAS — Cap. ${capituloSel.codigo_capitulo} (${partidas.length})`)}
@@ -267,7 +262,6 @@ export default function ExploradorArancel() {
           </div>
         </div>
 
-        {/* Columna derecha: Subpartidas (aparece al seleccionar partida) */}
         {partidaSel && (
           <div style={{ ...colBase, maxHeight: '560px' }}>
             {encabezado(NIVEL_COLORS.subpartida.bg,
@@ -297,14 +291,8 @@ export default function ExploradorArancel() {
             </div>
           </div>
         )}
-
-        {/* Mensaje si no hay partida seleccionada */}
-        {!partidaSel && (
-          <div style={{ display: 'none' }} />
-        )}
       </div>
 
-      {/* Hint cuando solo se ven partidas */}
       {!partidaSel && !cargandoParts && partidas.length > 0 && (
         <div style={{ textAlign: 'center', color: '#9ca3af', fontSize: '13px', marginTop: '12px' }}>
           👆 Selecciona una partida para ver sus subpartidas nacionales
