@@ -120,11 +120,19 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # ── CORS ──────────────────────────────────────────────────────────────────────
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+CORS_ORIGINS_ENV = os.environ.get('CORS_ALLOWED_ORIGINS', '')
+
+if CORS_ORIGINS_ENV:
+    # Producción
+    CORS_ALLOWED_ORIGINS = [origin.strip() for origin in CORS_ORIGINS_ENV.split(',')]
+    CORS_ALLOW_ALL_ORIGINS = False
+else:
+    # Desarrollo local
+    CORS_ALLOW_ALL_ORIGINS = True
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
 
 
 # ── Internacionalización ──────────────────────────────────────────────────────
