@@ -1,943 +1,3841 @@
-{
-  "id": "02",
-  "nivel": "CAPITULO",
-  "codigo_oficial": "02",
-  "descripcion": "CARNE Y DESPOJOS COMESTIBLES",
-  "is_leaf": false,
-  "children": [
-    {
-      "id": "02.01",
-      "nivel": "PARTIDA",
-      "codigo_oficial": "02.01",
-      "descripcion": "Carne de animales de la especie bovina, fresca o refrigerada.",
-      "is_leaf": false,
-      "children": [
-        {
-          "id": "0201.10.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0201.10.00.00",
-          "descripcion": "- En canales o medias canales",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0201.20.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0201.20.00.00",
-          "descripcion": "- Los demás cortes (trozos) sin deshuesar",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0201.30.00",
-          "nivel": "NANDINA",
-          "codigo_oficial": "0201.30.00",
-          "descripcion": "- Deshuesada:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0201.30.00.10",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0201.30.00.10",
-              "descripcion": "- - Trimming",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0201.30.00.90",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0201.30.00.90",
-              "descripcion": "- - Las demás",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "02.02",
-      "nivel": "PARTIDA",
-      "codigo_oficial": "02.02",
-      "descripcion": "Carne de animales de la especie bovina, congelada.",
-      "is_leaf": false,
-      "children": [
-        {
-          "id": "0202.10.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0202.10.00.00",
-          "descripcion": "- En canales o medias canales",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0202.20.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0202.20.00.00",
-          "descripcion": "- Los demás cortes (trozos) sin deshuesar",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0202.30.00",
-          "nivel": "NANDINA",
-          "codigo_oficial": "0202.30.00",
-          "descripcion": "- Deshuesada:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0202.30.00.10",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0202.30.00.10",
-              "descripcion": "- - Trimming",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0202.30.00.90",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0202.30.00.90",
-              "descripcion": "- - Las demás",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "02.03",
-      "nivel": "PARTIDA",
-      "codigo_oficial": "02.03",
-      "descripcion": "Carne de animales de la especie porcina, fresca, refrigerada o congelada.",
-      "is_leaf": false,
-      "children": [
-        {
-          "id": "AGR_02_1_5197",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- Fresca o refrigerada:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0203.11.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0203.11.00.00",
-              "descripcion": "- - En canales o medias canales",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0203.12.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0203.12.00.00",
-              "descripcion": "- - Piernas, paletas, y sus trozos, sin deshuesar",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0203.19",
-              "nivel": "SUBPARTIDA_SA",
-              "codigo_oficial": "0203.19",
-              "descripcion": "- - Las demás:",
-              "is_leaf": false,
-              "children": [
-                {
-                  "id": "0203.19.10.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0203.19.10.00",
-                  "descripcion": "- - - Carne deshuesada",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                },
-                {
-                  "id": "0203.19.20.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0203.19.20.00",
-                  "descripcion": "- - - Chuletas, costillas",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                },
-                {
-                  "id": "0203.19.30.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0203.19.30.00",
-                  "descripcion": "- - - Tocino con partes magras",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                },
-                {
-                  "id": "0203.19.90.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0203.19.90.00",
-                  "descripcion": "- - - Las demás",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "AGR_02_1_2783",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- Congelada:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0203.21.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0203.21.00.00",
-              "descripcion": "- - En canales o medias canales",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0203.22.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0203.22.00.00",
-              "descripcion": "- - Piernas, paletas, y sus trozos, sin deshuesar",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0203.29",
-              "nivel": "SUBPARTIDA_SA",
-              "codigo_oficial": "0203.29",
-              "descripcion": "- - Las demás:",
-              "is_leaf": false,
-              "children": [
-                {
-                  "id": "0203.29.10.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0203.29.10.00",
-                  "descripcion": "- - - Carne deshuesada",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                },
-                {
-                  "id": "0203.29.20.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0203.29.20.00",
-                  "descripcion": "- - - Chuletas, costillas",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                },
-                {
-                  "id": "0203.29.30.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0203.29.30.00",
-                  "descripcion": "- - - Tocino con partes magras",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                },
-                {
-                  "id": "0203.29.90.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0203.29.90.00",
-                  "descripcion": "- - - Las demás",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "02.04",
-      "nivel": "PARTIDA",
-      "codigo_oficial": "02.04",
-      "descripcion": "Carne de animales de las especies ovina o caprina, fresca, refrigerada o",
-      "is_leaf": false,
-      "children": [
-        {
-          "id": "0204.10.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0204.10.00.00",
-          "descripcion": "- Canales o medias canales de cordero, frescas o refrigeradas",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "AGR_02_1_3118",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- Las demás carnes de animales de la especie ovina, frescas o refrigeradas:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0204.21.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0204.21.00.00",
-              "descripcion": "- - En canales o medias canales",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0204.22.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0204.22.00.00",
-              "descripcion": "- - Los demás cortes (trozos) sin deshuesar",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0204.23.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0204.23.00.00",
-              "descripcion": "- - Deshuesadas",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "0204.30.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0204.30.00.00",
-          "descripcion": "- Canales o medias canales de cordero, congeladas",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "AGR_02_1_4356",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- Las demás carnes de animales de la especie ovina, congeladas:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0204.41.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0204.41.00.00",
-              "descripcion": "- - En canales o medias canales",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0204.42.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0204.42.00.00",
-              "descripcion": "- - Los demás cortes (trozos) sin deshuesar",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0204.43.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0204.43.00.00",
-              "descripcion": "- - Deshuesadas",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "0204.50.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0204.50.00.00",
-          "descripcion": "- Carne de animales de la especie caprina",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        }
-      ]
-    },
-    {
-      "id": "0205.00.00.00",
-      "nivel": "SUBPARTIDA_NACIONAL",
-      "codigo_oficial": "0205.00.00.00",
-      "descripcion": "Carne de animales de las especies caballar, asnal o mular, fresca,",
-      "is_leaf": true,
-      "ga_porcentaje": "10",
-      "unidad_medida": "kg"
-    },
-    {
-      "id": "02.06",
-      "nivel": "PARTIDA",
-      "codigo_oficial": "02.06",
-      "descripcion": "Despojos comestibles de animales de las especies bovina, porcina, ovina,",
-      "is_leaf": false,
-      "children": [
-        {
-          "id": "0206.10.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0206.10.00.00",
-          "descripcion": "- De la especie bovina, frescos o refrigerados",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "AGR_02_1_1204",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- De la especie bovina, congelados:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0206.21.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0206.21.00.00",
-              "descripcion": "- - Lenguas",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0206.22.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0206.22.00.00",
-              "descripcion": "- - Hígados",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0206.29.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0206.29.00.00",
-              "descripcion": "- - Los demás",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "0206.30.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0206.30.00.00",
-          "descripcion": "- De la especie porcina, frescos o refrigerados",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "AGR_02_1_8697",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- De la especie porcina, congelados:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0206.41.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0206.41.00.00",
-              "descripcion": "- - Hígados",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0206.49",
-              "nivel": "SUBPARTIDA_SA",
-              "codigo_oficial": "0206.49",
-              "descripcion": "- - Los demás:",
-              "is_leaf": false,
-              "children": [
-                {
-                  "id": "0206.49.10.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0206.49.10.00",
-                  "descripcion": "- - - Piel comestible (cuero, pellejo)",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                },
-                {
-                  "id": "0206.49.90.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0206.49.90.00",
-                  "descripcion": "- - - Los demás",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "0206.80.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0206.80.00.00",
-          "descripcion": "- Los demás, frescos o refrigerados",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0206.90.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0206.90.00.00",
-          "descripcion": "- Los demás, congelados",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        }
-      ]
-    },
-    {
-      "id": "02.07",
-      "nivel": "PARTIDA",
-      "codigo_oficial": "02.07",
-      "descripcion": "Carne y despojos comestibles, de aves de la partida 01.05, frescos,",
-      "is_leaf": false,
-      "children": [
-        {
-          "id": "AGR_02_1_4291",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- De aves de la especie Gallus domesticus:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0207.11.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.11.00.00",
-              "descripcion": "- - Sin trocear, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.12.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.12.00.00",
-              "descripcion": "- - Sin trocear, congelados",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.13.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.13.00.00",
-              "descripcion": "- - Trozos y despojos, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.14.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.14.00.00",
-              "descripcion": "- - Trozos y despojos, congelados",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "AGR_02_1_7300",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- De pavo (gallipavo):",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0207.24.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.24.00.00",
-              "descripcion": "- - Sin trocear, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.25.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.25.00.00",
-              "descripcion": "- - Sin trocear, congelados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.26.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.26.00.00",
-              "descripcion": "- - Trozos y despojos, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.27.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.27.00.00",
-              "descripcion": "- - Trozos y despojos, congelados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "AGR_02_1_6698",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- De pato:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0207.41.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.41.00.00",
-              "descripcion": "- - Sin trocear, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.42.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.42.00.00",
-              "descripcion": "- - Sin trocear, congelados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.43.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.43.00.00",
-              "descripcion": "- - Hígados grasos, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.44.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.44.00.00",
-              "descripcion": "- - Los demás, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.45.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.45.00.00",
-              "descripcion": "- - Los demás, congelados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "AGR_02_1_2092",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- De ganso:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0207.51.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.51.00.00",
-              "descripcion": "- - Sin trocear, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.52.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.52.00.00",
-              "descripcion": "- - Sin trocear, congelados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.53.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.53.00.00",
-              "descripcion": "- - Hígados grasos, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.54.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.54.00.00",
-              "descripcion": "- - Los demás, frescos o refrigerados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0207.55.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0207.55.00.00",
-              "descripcion": "- - Los demás, congelados",
-              "is_leaf": true,
-              "ga_porcentaje": "20",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "0207.60.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0207.60.00.00",
-          "descripcion": "- De pintada",
-          "is_leaf": true,
-          "ga_porcentaje": "20",
-          "unidad_medida": "kg"
-        }
-      ]
-    },
-    {
-      "id": "02.08",
-      "nivel": "PARTIDA",
-      "codigo_oficial": "02.08",
-      "descripcion": "Las demás carnes y despojos comestibles, frescos, refrigerados o",
-      "is_leaf": false,
-      "children": [
-        {
-          "id": "0208.10.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0208.10.00.00",
-          "descripcion": "- De conejo o liebre",
-          "is_leaf": true,
-          "ga_porcentaje": "20",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0208.30.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0208.30.00.00",
-          "descripcion": "- De primates",
-          "is_leaf": true,
-          "ga_porcentaje": "20",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "AGR_02_1_7844",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- De\tballenas,\tdelfines\ty\tmarsopas\t(mamíferos\tdel\torden\tCetacea);\tde",
-          "is_leaf": false,
-          "children": []
-        },
-        {
-          "id": "0208.50.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0208.50.00.00",
-          "descripcion": "- De reptiles (incluidas las serpientes y tortugas de mar)",
-          "is_leaf": true,
-          "ga_porcentaje": "20",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0208.60.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0208.60.00.00",
-          "descripcion": "- De camellos y demás camélidos ( Camelidae)",
-          "is_leaf": true,
-          "ga_porcentaje": "20",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0208.90.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0208.90.00.00",
-          "descripcion": "- Los demás",
-          "is_leaf": true,
-          "ga_porcentaje": "20",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "0209.10",
-          "nivel": "SUBPARTIDA_SA",
-          "codigo_oficial": "0209.10",
-          "descripcion": "- De cerdo:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0209.10.10.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0209.10.10.00",
-              "descripcion": "- - Tocino sin partes magras",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0209.10.90.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0209.10.90.00",
-              "descripcion": "- - Los demás",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "0209.90.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0209.90.00.00",
-          "descripcion": "- Las demás",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        }
-      ]
-    },
-    {
-      "id": "02.10",
-      "nivel": "PARTIDA",
-      "codigo_oficial": "02.10",
-      "descripcion": "Carne y despojos comestibles, salados o en salmuera, secos o ahumados;",
-      "is_leaf": false,
-      "children": [
-        {
-          "id": "AGR_02_1_2807",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- Carne de la especie porcina:",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0210.11.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0210.11.00.00",
-              "descripcion": "- - Jamones, paletas, y sus trozos, sin deshuesar",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0210.12.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0210.12.00.00",
-              "descripcion": "- - Tocino entreverado de panza (panceta) y sus trozos",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0210.19.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0210.19.00.00",
-              "descripcion": "- - Las demás",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            }
-          ]
-        },
-        {
-          "id": "0210.20.00.00",
-          "nivel": "SUBPARTIDA_NACIONAL",
-          "codigo_oficial": "0210.20.00.00",
-          "descripcion": "- Carne de la especie bovina",
-          "is_leaf": true,
-          "ga_porcentaje": "10",
-          "unidad_medida": "kg"
-        },
-        {
-          "id": "AGR_02_1_2729",
-          "nivel": "AGRUPACION",
-          "codigo_oficial": null,
-          "descripcion": "- Los demás, incluidos la harina y polvo comestibles, de carne o de",
-          "is_leaf": false,
-          "children": [
-            {
-              "id": "0210.91.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0210.91.00.00",
-              "descripcion": "- - De primates",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "AGR_02_2_9664",
-              "nivel": "AGRUPACION",
-              "codigo_oficial": null,
-              "descripcion": "- - De\tballenas,\tdelfines\ty\tmarsopas\t(mamíferos\tdel\torden\tCetacea);",
-              "is_leaf": false,
-              "children": []
-            },
-            {
-              "id": "0210.93.00.00",
-              "nivel": "SUBPARTIDA_NACIONAL",
-              "codigo_oficial": "0210.93.00.00",
-              "descripcion": "- - De reptiles (incluidas las serpientes y tortugas de mar)",
-              "is_leaf": true,
-              "ga_porcentaje": "10",
-              "unidad_medida": "kg"
-            },
-            {
-              "id": "0210.99",
-              "nivel": "SUBPARTIDA_SA",
-              "codigo_oficial": "0210.99",
-              "descripcion": "- - Los demás:",
-              "is_leaf": false,
-              "children": [
-                {
-                  "id": "0210.99.10.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0210.99.10.00",
-                  "descripcion": "- - - Harina y polvo comestibles, de carne o de despojos",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                },
-                {
-                  "id": "0210.99.90.00",
-                  "nivel": "SUBPARTIDA_NACIONAL",
-                  "codigo_oficial": "0210.99.90.00",
-                  "descripcion": "- - - Los demás",
-                  "is_leaf": true,
-                  "ga_porcentaje": "10",
-                  "unidad_medida": "kg"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": "02",
+    "nivel": "CAPITULO",
+    "codigo_oficial": "02",
+    "descripcion": "CARNE Y DESPOJOS COMESTIBLES",
+    "notas_legales": "Nota. 1. Este Capítulo no comprende: a) respecto de las partidas 02.01 a 02.08 y 02.10, los productos impropios para la alimentación humana; b) los insectos comestibles, sin vida (partida 04.10); c) las tripas, vejigas y estómagos de animales (partida 05.04), ni la sangre animal (partidas 05.11 o 30.02); d) las grasas animales, excepto los productos de la partida 02.09 (Capítulo 15). % de en VEN",
+    "is_leaf": false,
+    "children": [
+      {
+        "id": "02.01",
+        "nivel": "PARTIDA",
+        "codigo_oficial": "02.01",
+        "descripcion": "Carne de animales de la especie bovina, fresca o refrigerada.",
+        "is_leaf": false,
+        "children": [
+          {
+            "id": "0201.10.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0201.10.00.00",
+            "descripcion": "- En canales o medias canales",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0201.20.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0201.20.00.00",
+            "descripcion": "- Los demás cortes (trozos) sin deshuesar",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0201.30.00",
+            "nivel": "NANDINA",
+            "codigo_oficial": "0201.30.00",
+            "descripcion": "- Deshuesada:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0201.30.00.10",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0201.30.00.10",
+                "descripcion": "- - Trimming",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0201.30.00.90",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0201.30.00.90",
+                "descripcion": "- - Las demás",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "02.02",
+        "nivel": "PARTIDA",
+        "codigo_oficial": "02.02",
+        "descripcion": "Carne de animales de la especie bovina, congelada.",
+        "is_leaf": false,
+        "children": [
+          {
+            "id": "0202.10.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0202.10.00.00",
+            "descripcion": "- En canales o medias canales",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0202.20.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0202.20.00.00",
+            "descripcion": "- Los demás cortes (trozos) sin deshuesar",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0202.30.00",
+            "nivel": "NANDINA",
+            "codigo_oficial": "0202.30.00",
+            "descripcion": "- Deshuesada:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0202.30.00.10",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0202.30.00.10",
+                "descripcion": "- - Trimming",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0202.30.00.90",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0202.30.00.90",
+                "descripcion": "- - Las demás",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "02.03",
+        "nivel": "PARTIDA",
+        "codigo_oficial": "02.03",
+        "descripcion": "Carne de animales de la especie porcina, fresca, refrigerada o congelada.",
+        "is_leaf": false,
+        "children": [
+          {
+            "id": "AGR_0203_FRESCA_264",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- Fresca o refrigerada:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0203.11.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0203.11.00.00",
+                "descripcion": "- - En canales o medias canales",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0203.12.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0203.12.00.00",
+                "descripcion": "- - Piernas, paletas, y sus trozos, sin deshuesar",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0203.19",
+                "nivel": "SUBPARTIDA_SA",
+                "codigo_oficial": "0203.19",
+                "descripcion": "- - Las demás:",
+                "is_leaf": false,
+                "children": [
+                  {
+                    "id": "0203.19.10.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0203.19.10.00",
+                    "descripcion": "- - - Carne deshuesada",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0203.19.20.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0203.19.20.00",
+                    "descripcion": "- - - Chuletas, costillas",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0203.19.30.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0203.19.30.00",
+                    "descripcion": "- - - Tocino con partes magras",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0203.19.90.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0203.19.90.00",
+                    "descripcion": "- - - Las demás",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "AGR_0203_CONGELADA_673",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- Congelada:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0203.21.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0203.21.00.00",
+                "descripcion": "- - En canales o medias canales",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0203.22.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0203.22.00.00",
+                "descripcion": "- - Piernas, paletas, y sus trozos, sin deshuesar",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0203.29",
+                "nivel": "SUBPARTIDA_SA",
+                "codigo_oficial": "0203.29",
+                "descripcion": "- - Las demás:",
+                "is_leaf": false,
+                "children": [
+                  {
+                    "id": "0203.29.10.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0203.29.10.00",
+                    "descripcion": "- - - Carne deshuesada",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0203.29.20.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0203.29.20.00",
+                    "descripcion": "- - - Chuletas, costillas",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0203.29.30.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0203.29.30.00",
+                    "descripcion": "- - - Tocino con partes magras",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0203.29.90.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0203.29.90.00",
+                    "descripcion": "- - - Las demás",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "02.04",
+        "nivel": "PARTIDA",
+        "codigo_oficial": "02.04",
+        "descripcion": "Carne de animales de las especies ovina o caprina, fresca, refrigerada o",
+        "is_leaf": false,
+        "children": [
+          {
+            "id": "0204.10.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0204.10.00.00",
+            "descripcion": "- Canales o medias canales de cordero, frescas o refrigeradas",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "AGR_0204_LAS_995",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- Las demás carnes de animales de la especie ovina, frescas o refrigeradas:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0204.21.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0204.21.00.00",
+                "descripcion": "- - En canales o medias canales",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0204.22.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0204.22.00.00",
+                "descripcion": "- - Los demás cortes (trozos) sin deshuesar",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0204.23.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0204.23.00.00",
+                "descripcion": "- - Deshuesadas",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0204.30.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0204.30.00.00",
+            "descripcion": "- Canales o medias canales de cordero, congeladas",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "AGR_0204_LAS_374",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- Las demás carnes de animales de la especie ovina, congeladas:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0204.41.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0204.41.00.00",
+                "descripcion": "- - En canales o medias canales",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0204.42.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0204.42.00.00",
+                "descripcion": "- - Los demás cortes (trozos) sin deshuesar",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0204.43.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0204.43.00.00",
+                "descripcion": "- - Deshuesadas",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0204.50.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0204.50.00.00",
+            "descripcion": "- Carne de animales de la especie caprina",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "0205.00.00.00",
+        "nivel": "SUBPARTIDA_NACIONAL",
+        "codigo_oficial": "0205.00.00.00",
+        "descripcion": "Carne de animales de las especies caballar, asnal o mular, fresca,",
+        "is_leaf": true,
+        "ga_porcentaje": 10,
+        "ice_iehd": null,
+        "unidad_medida": "kg",
+        "despacho_frontera": null,
+        "documentos_adicionales": [],
+        "preferencias": [
+          {
+            "tipo_acuerdo": "CAN",
+            "porcentaje_desgravacion": 100
+          },
+          {
+            "tipo_acuerdo": "ACE_36",
+            "porcentaje_desgravacion": 100
+          },
+          {
+            "tipo_acuerdo": "ACE_47",
+            "porcentaje_desgravacion": 0
+          },
+          {
+            "tipo_acuerdo": "VEN",
+            "porcentaje_desgravacion": 0
+          },
+          {
+            "tipo_acuerdo": "ACE_22_CHI",
+            "porcentaje_desgravacion": 0
+          },
+          {
+            "tipo_acuerdo": "ACE_22_PROT",
+            "porcentaje_desgravacion": 0
+          },
+          {
+            "tipo_acuerdo": "ACE_66_MEX",
+            "porcentaje_desgravacion": 0
+          }
+        ]
+      },
+      {
+        "id": "02.06",
+        "nivel": "PARTIDA",
+        "codigo_oficial": "02.06",
+        "descripcion": "Despojos comestibles de animales de las especies bovina, porcina, ovina,",
+        "is_leaf": false,
+        "children": [
+          {
+            "id": "0206.10.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0206.10.00.00",
+            "descripcion": "- De la especie bovina, frescos o refrigerados",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "AGR_0206_ESPECIE_698",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- De la especie bovina, congelados:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0206.21.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0206.21.00.00",
+                "descripcion": "- - Lenguas",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0206.22.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0206.22.00.00",
+                "descripcion": "- - Hígados",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0206.29.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0206.29.00.00",
+                "descripcion": "- - Los demás",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0206.30.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0206.30.00.00",
+            "descripcion": "- De la especie porcina, frescos o refrigerados",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "AGR_0206_ESPECIE_786",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- De la especie porcina, congelados:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0206.41.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0206.41.00.00",
+                "descripcion": "- - Hígados",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0206.49",
+                "nivel": "SUBPARTIDA_SA",
+                "codigo_oficial": "0206.49",
+                "descripcion": "- - Los demás:",
+                "is_leaf": false,
+                "children": [
+                  {
+                    "id": "0206.49.10.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0206.49.10.00",
+                    "descripcion": "- - - Piel comestible (cuero, pellejo)",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0206.49.90.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0206.49.90.00",
+                    "descripcion": "- - - Los demás",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0206.80.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0206.80.00.00",
+            "descripcion": "- Los demás, frescos o refrigerados",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0206.90.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0206.90.00.00",
+            "descripcion": "- Los demás, congelados",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "02.07",
+        "nivel": "PARTIDA",
+        "codigo_oficial": "02.07",
+        "descripcion": "Carne y despojos comestibles, de aves de la partida 01.05, frescos,",
+        "is_leaf": false,
+        "children": [
+          {
+            "id": "AGR_0207_AVES_651",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- De aves de la especie Gallus domesticus:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0207.11.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.11.00.00",
+                "descripcion": "- - Sin trocear, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.12.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.12.00.00",
+                "descripcion": "- - Sin trocear, congelados",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.13.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.13.00.00",
+                "descripcion": "- - Trozos y despojos, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.14.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.14.00.00",
+                "descripcion": "- - Trozos y despojos, congelados",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "AGR_0207_PAVO_335",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- De pavo (gallipavo):",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0207.24.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.24.00.00",
+                "descripcion": "- - Sin trocear, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.25.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.25.00.00",
+                "descripcion": "- - Sin trocear, congelados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.26.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.26.00.00",
+                "descripcion": "- - Trozos y despojos, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.27.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.27.00.00",
+                "descripcion": "- - Trozos y despojos, congelados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "AGR_0207_PATO_522",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- De pato:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0207.41.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.41.00.00",
+                "descripcion": "- - Sin trocear, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.42.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.42.00.00",
+                "descripcion": "- - Sin trocear, congelados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.43.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.43.00.00",
+                "descripcion": "- - Hígados grasos, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.44.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.44.00.00",
+                "descripcion": "- - Los demás, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.45.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.45.00.00",
+                "descripcion": "- - Los demás, congelados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "AGR_0207_GANSO_787",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- De ganso:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0207.51.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.51.00.00",
+                "descripcion": "- - Sin trocear, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.52.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.52.00.00",
+                "descripcion": "- - Sin trocear, congelados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.53.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.53.00.00",
+                "descripcion": "- - Hígados grasos, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.54.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.54.00.00",
+                "descripcion": "- - Los demás, frescos o refrigerados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0207.55.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0207.55.00.00",
+                "descripcion": "- - Los demás, congelados",
+                "is_leaf": true,
+                "ga_porcentaje": 20,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0207.60.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0207.60.00.00",
+            "descripcion": "- De pintada",
+            "is_leaf": true,
+            "ga_porcentaje": 20,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "02.08",
+        "nivel": "PARTIDA",
+        "codigo_oficial": "02.08",
+        "descripcion": "Las demás carnes y despojos comestibles, frescos, refrigerados o",
+        "is_leaf": false,
+        "children": [
+          {
+            "id": "0208.10.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0208.10.00.00",
+            "descripcion": "- De conejo o liebre",
+            "is_leaf": true,
+            "ga_porcentaje": 20,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0208.30.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0208.30.00.00",
+            "descripcion": "- De primates",
+            "is_leaf": true,
+            "ga_porcentaje": 20,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "AGR_0208_BALLENAS_332",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- De\tballenas,\tdelfines\ty\tmarsopas\t(mamíferos\tdel\torden\tCetacea);\tde",
+            "is_leaf": false,
+            "children": []
+          },
+          {
+            "id": "0208.50.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0208.50.00.00",
+            "descripcion": "- De reptiles (incluidas las serpientes y tortugas de mar)",
+            "is_leaf": true,
+            "ga_porcentaje": 20,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0208.60.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0208.60.00.00",
+            "descripcion": "- De camellos y demás camélidos ( Camelidae)",
+            "is_leaf": true,
+            "ga_porcentaje": 20,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0208.90.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0208.90.00.00",
+            "descripcion": "- Los demás",
+            "is_leaf": true,
+            "ga_porcentaje": 20,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "0209.10",
+            "nivel": "SUBPARTIDA_SA",
+            "codigo_oficial": "0209.10",
+            "descripcion": "- De cerdo:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0209.10.10.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0209.10.10.00",
+                "descripcion": "- - Tocino sin partes magras",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0209.10.90.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0209.10.90.00",
+                "descripcion": "- - Los demás",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0209.90.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0209.90.00.00",
+            "descripcion": "- Las demás",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "02.10",
+        "nivel": "PARTIDA",
+        "codigo_oficial": "02.10",
+        "descripcion": "Carne y despojos comestibles, salados o en salmuera, secos o ahumados;",
+        "is_leaf": false,
+        "children": [
+          {
+            "id": "AGR_0210_CARNE_830",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- Carne de la especie porcina:",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0210.11.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0210.11.00.00",
+                "descripcion": "- - Jamones, paletas, y sus trozos, sin deshuesar",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0210.12.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0210.12.00.00",
+                "descripcion": "- - Tocino entreverado de panza (panceta) y sus trozos",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0210.19.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0210.19.00.00",
+                "descripcion": "- - Las demás",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [
+                  {
+                    "tipo_doc": "C*",
+                    "entidad_emisora": "MDPRyA (SENASAG)",
+                    "disposicion_legal": "Ley 830 - Dec. 515"
+                  }
+                ],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 515
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0210.20.00.00",
+            "nivel": "SUBPARTIDA_NACIONAL",
+            "codigo_oficial": "0210.20.00.00",
+            "descripcion": "- Carne de la especie bovina",
+            "is_leaf": true,
+            "ga_porcentaje": 10,
+            "ice_iehd": null,
+            "unidad_medida": "kg",
+            "despacho_frontera": "C*",
+            "documentos_adicionales": [
+              {
+                "tipo_doc": "C*",
+                "entidad_emisora": "MDPRyA (SENASAG)",
+                "disposicion_legal": "Ley 830 - Dec. 515"
+              }
+            ],
+            "preferencias": [
+              {
+                "tipo_acuerdo": "CAN",
+                "porcentaje_desgravacion": 515
+              },
+              {
+                "tipo_acuerdo": "ACE_36",
+                "porcentaje_desgravacion": 100
+              },
+              {
+                "tipo_acuerdo": "ACE_47",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "VEN",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_CHI",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_22_PROT",
+                "porcentaje_desgravacion": 0
+              },
+              {
+                "tipo_acuerdo": "ACE_66_MEX",
+                "porcentaje_desgravacion": 0
+              }
+            ]
+          },
+          {
+            "id": "AGR_0210_LOS_331",
+            "nivel": "AGRUPACION",
+            "codigo_oficial": null,
+            "descripcion": "- Los demás, incluidos la harina y polvo comestibles, de carne o de",
+            "is_leaf": false,
+            "children": [
+              {
+                "id": "0210.91.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0210.91.00.00",
+                "descripcion": "- - De primates",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "AGR_0210_BALLENAS_392",
+                "nivel": "AGRUPACION",
+                "codigo_oficial": null,
+                "descripcion": "- - De\tballenas,\tdelfines\ty\tmarsopas\t(mamíferos\tdel\torden\tCetacea);",
+                "is_leaf": false,
+                "children": []
+              },
+              {
+                "id": "0210.93.00.00",
+                "nivel": "SUBPARTIDA_NACIONAL",
+                "codigo_oficial": "0210.93.00.00",
+                "descripcion": "- - De reptiles (incluidas las serpientes y tortugas de mar)",
+                "is_leaf": true,
+                "ga_porcentaje": 10,
+                "ice_iehd": null,
+                "unidad_medida": "kg",
+                "despacho_frontera": "C*",
+                "documentos_adicionales": [],
+                "preferencias": [
+                  {
+                    "tipo_acuerdo": "CAN",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_36",
+                    "porcentaje_desgravacion": 100
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_47",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "VEN",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_CHI",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_22_PROT",
+                    "porcentaje_desgravacion": 0
+                  },
+                  {
+                    "tipo_acuerdo": "ACE_66_MEX",
+                    "porcentaje_desgravacion": 0
+                  }
+                ]
+              },
+              {
+                "id": "0210.99",
+                "nivel": "SUBPARTIDA_SA",
+                "codigo_oficial": "0210.99",
+                "descripcion": "- - Los demás:",
+                "is_leaf": false,
+                "children": [
+                  {
+                    "id": "0210.99.10.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0210.99.10.00",
+                    "descripcion": "- - - Harina y polvo comestibles, de carne o de despojos",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0210.99.90.00",
+                    "nivel": "SUBPARTIDA_NACIONAL",
+                    "codigo_oficial": "0210.99.90.00",
+                    "descripcion": "- - - Los demás",
+                    "is_leaf": true,
+                    "ga_porcentaje": 10,
+                    "ice_iehd": null,
+                    "unidad_medida": "kg",
+                    "despacho_frontera": "C*",
+                    "documentos_adicionales": [
+                      {
+                        "tipo_doc": "C*",
+                        "entidad_emisora": "MDPRyA (SENASAG)",
+                        "disposicion_legal": "Ley 830 - Dec. 515"
+                      }
+                    ],
+                    "preferencias": [
+                      {
+                        "tipo_acuerdo": "CAN",
+                        "porcentaje_desgravacion": 515
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_36",
+                        "porcentaje_desgravacion": 100
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_47",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "VEN",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_CHI",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_22_PROT",
+                        "porcentaje_desgravacion": 0
+                      },
+                      {
+                        "tipo_acuerdo": "ACE_66_MEX",
+                        "porcentaje_desgravacion": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
