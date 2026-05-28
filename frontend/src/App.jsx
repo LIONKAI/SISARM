@@ -40,8 +40,6 @@ export default function App() {
                         <div style={itemMenu('buscador')} onClick={() => setVista('buscador')}>🔍 Buscar Mercancía</div>
                         <div style={itemMenu('explorador')} onClick={() => setVista('explorador')}>🌳 Explorar Arancel</div>
                         <div style={itemMenu('analizar')} onClick={() => setVista('analizar')}>📊 Analizar Partida</div>
-                        <div style={itemMenu('sustento')} onClick={() => setVista('sustento')}>📄 Consultar Sustento</div>
-                        <div style={itemMenu('tributos')} onClick={() => setVista('tributos')}>💲 Verificar Tributos</div>
                         <div style={itemMenu('asistente')} onClick={() => setVista('asistente')}>⚡ Asistente IA</div>
                         <div style={itemMenu('exportar')} onClick={() => setVista('exportar')}>📥 Exportar Reporte</div>
                     </div>
@@ -112,9 +110,8 @@ export default function App() {
                     {vista === 'buscador' && (
                         <>
                             <h1 style={{ margin: '0 0 20px 0', fontSize: '24px', color: '#111827' }}>🔍 Buscar Mercancía</h1>
-                            <div style={{ backgroundColor: 'white', padding: '25px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
-                                <BuscadorArancel token={usuario.access} />
-                            </div>
+                            {/* Sin tarjeta envolvente: el buscador ahora usa dos columnas anchas. */}
+                            <BuscadorArancel token={usuario.access} />
                         </>
                     )}
 
@@ -130,7 +127,7 @@ export default function App() {
                     )}
 
                     {/* VISTAS EN CONSTRUCCIÓN */}
-                    {['analizar', 'sustento', 'tributos', 'asistente', 'exportar'].includes(vista) && (
+                    {['analizar', 'asistente', 'exportar'].includes(vista) && (
                         <div style={{ textAlign: 'center', padding: '80px 20px', color: '#9ca3af' }}>
                             <div style={{ fontSize: '48px', marginBottom: '16px' }}>🚧</div>
                             <div style={{ fontSize: '20px', fontWeight: '600', color: '#374151', marginBottom: '8px' }}>Módulo en desarrollo</div>
