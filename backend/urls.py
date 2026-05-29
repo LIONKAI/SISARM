@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from api import views
 from api.views import (
     registrar_usuario, buscar_nomenclatura,
-    explorador_capitulos, explorador_partidas, explorador_subpartidas
+    explorador_capitulos, explorador_partidas, explorador_subpartidas, solicitar_recuperacion, restablecer_password
 )
 
 urlpatterns = [
@@ -15,4 +16,6 @@ urlpatterns = [
     path('api/explorador/capitulos/', explorador_capitulos),
     path('api/explorador/capitulo/<str:capitulo>/', explorador_partidas),
     path('api/explorador/partida/<str:partida>/', explorador_subpartidas),
+    path('api/recuperar-password/', views.solicitar_recuperacion, name='solicitar_recuperacion'),
+    path('api/restablecer-password/', views.restablecer_password, name='restablecer_password'),
 ]

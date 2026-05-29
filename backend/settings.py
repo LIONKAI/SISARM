@@ -162,3 +162,20 @@ REST_FRAMEWORK = {
 # ── Default primary key ───────────────────────────────────────────────────────
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# ══════════════════════════════════════════════════════════════════════
+#  CONFIGURACIÓN DE EMAIL — HU 1.2 Recuperación de contraseña
+#  Cartero: Gmail SMTP con contraseña de aplicación.
+#  Las credenciales se leen de variables de entorno (.env) para no
+#  exponerlas en el repositorio. Principio 12-Factor App, factor III.
+# ══════════════════════════════════════════════════════════════════════
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+DEFAULT_FROM_EMAIL = f'SISARM <{EMAIL_HOST_USER}>'
+
+# URL del frontend, usada para construir el enlace de recuperación.
+# En producción se sobreescribirá con la URL de Vercel.
+FRONTEND_URL = os.environ.get('FRONTEND_URL', 'http://localhost:5173')

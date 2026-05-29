@@ -1,9 +1,30 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Auth from './Auth';
 import BuscadorArancel from './BuscadorArancel';
 import ExploradorArancel from './ExploradorArancel';
+import RestablecerPassword from './RestablecerPassword';
 
+// ══════════════════════════════════════════════════════════════════════
+//  CONTENEDOR DE RUTAS
+//  /                   → AppPrincipal (login + menú)
+//  /restablecer/?token → RestablecerPassword (HU 1.2)
+// ══════════════════════════════════════════════════════════════════════
 export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/restablecer" element={<RestablecerPassword />} />
+                <Route path="/*" element={<AppPrincipal />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+// ══════════════════════════════════════════════════════════════════════
+//  APP PRINCIPAL — el flujo que ya tenías, sin cambios funcionales.
+// ══════════════════════════════════════════════════════════════════════
+function AppPrincipal() {
     const [usuario, setUsuario] = useState(null);
     const [menuAbierto, setMenuAbierto] = useState(true);
     const [vista, setVista] = useState('inicio');
@@ -16,7 +37,6 @@ export default function App() {
         return <Auth onLoginSuccess={handleLoginSuccess} />;
     }
 
-    // Estilos del menú lateral
     const itemMenu = (nombre) => ({
         padding: '10px 14px',
         cursor: 'pointer',
@@ -90,7 +110,6 @@ export default function App() {
                                 </div>
                             </div>
 
-                            {/* Accesos rápidos */}
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
                                 <div onClick={() => setVista('buscador')} style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', cursor: 'pointer', borderTop: '3px solid #3b82f6' }}>
                                     <div style={{ fontSize: '24px', marginBottom: '8px' }}>🔍</div>
@@ -110,7 +129,6 @@ export default function App() {
                     {vista === 'buscador' && (
                         <>
                             <h1 style={{ margin: '0 0 20px 0', fontSize: '24px', color: '#111827' }}>🔍 Buscar Mercancía</h1>
-                            {/* Sin tarjeta envolvente: el buscador ahora usa dos columnas anchas. */}
                             <BuscadorArancel token={usuario.access} />
                         </>
                     )}

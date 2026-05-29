@@ -1,0 +1,65 @@
+# ══════════════════════════════════════════════════════════════════════
+#  SISARM — Archivo de entorno Conda
+#  Sistema de Clasificación Arancelaria y Gestión de Mercancías
+#
+#  Este archivo describe el entorno Python completo del backend del
+#  proyecto. Permite reproducir el entorno de desarrollo idéntico en
+#  cualquier máquina con un único comando:
+#
+#      conda env create -f environment.yml
+#      conda activate sisarm
+#
+#  Notas:
+#    · El backend está construido con Django + Django REST Framework.
+#    · Las dependencias se declaran bajo el bloque "pip:" porque son
+#      paquetes específicos del ecosistema Django alojados en PyPI.
+#    · Las dependencias del frontend (React, Vite, axios, etc.) se
+#      gestionan por separado en frontend/package.json mediante npm,
+#      ya que Node.js y npm tienen su propio sistema de paquetes
+#      independiente del de Python.
+# ══════════════════════════════════════════════════════════════════════
+
+name: sisarm
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # ── Núcleo del entorno ──
+  - python=3.12
+  - pip
+
+  # ── Dependencias instaladas vía pip (PyPI) ──
+  - pip:
+      # Framework web principal y servidor de aplicación
+      - Django==6.0.5
+      - asgiref==3.11.1
+      - sqlparse==0.5.5
+      - gunicorn==26.0.0
+      - whitenoise==6.12.0
+
+      # API REST y autenticación JWT
+      - djangorestframework==3.17.1
+      - djangorestframework_simplejwt==5.5.1
+      - PyJWT==2.12.1
+      - django-cors-headers==4.9.0
+
+      # Base de datos PostgreSQL y configuración por URL
+      - psycopg2-binary==2.9.12
+      - dj-database-url==3.1.2
+
+      # Variables de entorno (carga del archivo .env)
+      - python-dotenv==1.2.2
+
+      # Procesamiento de datos (carga de aranceles desde JSON/Excel)
+      - pandas==3.0.3
+      - numpy==2.4.6
+      - openpyxl==3.1.5
+      - et_xmlfile==2.0.0
+
+      # Utilidades auxiliares
+      - python-dateutil==2.9.0.post0
+      - six==1.17.0
+      - packaging==26.2
+      - tzdata==2026.2
