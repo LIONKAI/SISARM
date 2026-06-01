@@ -27,7 +27,7 @@ channels:
 
 dependencies:
   # ── Núcleo del entorno ──
-  - python=3.12
+  - python=3.13
   - pip
 
   # ── Dependencias instaladas vía pip (PyPI) ──
