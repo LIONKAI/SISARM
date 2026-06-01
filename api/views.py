@@ -1,6 +1,4 @@
-import email
 import unicodedata
-from urllib import request
 from django.contrib.auth.models import User
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -271,19 +269,16 @@ def solicitar_recuperacion(request):
 
     try:
         send_mail(
-            subject=asunto,
-            message=mensaje_texto,
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[email],
-            fail_silently=False,
-        )
+        subject=asunto,
+        message=mensaje_texto,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        recipient_list=[email],
+        fail_silently=False,
+    )
     except Exception as e:
-        # Registramos el error en el log del servidor, pero al cliente le
-        # devolvemos el mismo mensaje genérico para no filtrar información.
         print(f"[ERROR envío email recuperación] {e}")
 
     return Response(respuesta_generica, status=status.HTTP_200_OK)
-
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -334,3 +329,4 @@ def restablecer_password(request):
 
     return Response({'message': 'Contraseña actualizada correctamente. Ya puede ingresar al sistema con su nueva contraseña.'},
                     status=status.HTTP_200_OK)
+    
