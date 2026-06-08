@@ -1,8 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 
 const API = import.meta.env.VITE_API_URL;
 
+// ──────────────────────────────────────────────────────────────────────
+//  Enlaces directos a documentos oficiales — criterio 2.2.5 (SIS-32).
+//  Mapeo verificado contra los portales oficiales del Estado Plurinacional
+//  de Bolivia y de la Organización Mundial de Aduanas.
+// ──────────────────────────────────────────────────────────────────────
+const ENLACES_NORMATIVA = [
+    {
+        patron: /\bLey\s*1990\b/i,
+        url: 'https://www.aduana.gob.bo/lga-view',
+    },
+    {
+        patron: /\b(D\.?S\.?|Decreto\s*Supremo)\s*25870\b/i,
+        url: 'https://senavex.gob.bo/wp-content/uploads/2020/04/Decreto-Supremo-N%C2%B0-25870-Reglamento-Ley-General-de-Aduanas.pdf',
+    },
+    {
+        patron: /\bLey\s*830\b/i,
+        url: 'https://www.senasag.gob.bo/index.php/normativas-y-resoluciones/ley-830',
+    },
+];
+
+const SITIOS_OFICIALES_BO = [
+    'gacetaoficialdebolivia.gob.bo',
+    'aduana.gob.bo',
+    'senasag.gob.bo',
+    'lexivox.org',
+];
+
+// Devuelve la URL al documento oficial. Si la norma está en el mapa,
+// enlace directo. Si no, búsqueda restringida a portales oficiales.
+const urlNormativa = (disposicion) => {
+    if (!disposicion || !disposicion.trim()) return null;
+    for (const n of ENLACES_NORMATIVA) {
+        if (n.patron.test(disposicion)) return n.url;
+    }
+    const sites = SITIOS_OFICIALES_BO.map(s => `site:${s}`).join(' OR ');
+    const consulta = encodeURIComponent(`${disposicion} ${sites}`);
+    return `https://www.google.com/search?q=${consulta}`;
+};
 // ──────────────────────────────────────────────────────────────────────
 //  Mapa de nombres legibles para los acuerdos comerciales.
 //  El backend manda códigos cortos (CAN, ACE_36...). Aquí los traducimos
@@ -23,12 +62,20 @@ const NOMBRES_ACUERDO = {
 const fmtBs = (n) =>
     Number(n).toLocaleString('es-BO', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-export default function BuscadorArancel() {
+export default function BuscadorArancel({ token }) {
     const [textoDeLaBarra, setTextoDeLaBarra] = useState('');
     const [resultados, setResultados] = useState([]);
     const [cargando, setCargando] = useState(false);
     const [seleccionado, setSeleccionado] = useState(null); // ficha activa
     const [busquedaHecha, setBusquedaHecha] = useState(false);
+    // Debounce — la búsqueda se dispara 400ms después de la última tecla.
+    // Evita inundar el backend y el historial con búsquedas parciales (HU 5.3).
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            realizarBusqueda(textoDeLaBarra);
+        }, 400);
+        return () => clearTimeout(timer);
+    }, [textoDeLaBarra]);
 
     const realizarBusqueda = async (valorABuscar) => {
         if (!valorABuscar.trim()) {
@@ -39,7 +86,10 @@ export default function BuscadorArancel() {
         setCargando(true);
         try {
             const respuesta = await axios.get(
-                `${API}/buscar-nomenclatura/?q=${encodeURIComponent(valorABuscar)}`
+                `${API}/buscar-nomenclatura/?q=${encodeURIComponent(valorABuscar)}`,
+                // Token opcional: si está logueado, el backend registra la
+                // búsqueda en su historial (HU 5.3 / SIS-24).
+                token ? { headers: { Authorization: `Bearer ${token}` } } : undefined
             );
             setResultados(respuesta.data.resultados);
             setBusquedaHecha(true);
@@ -51,11 +101,21 @@ export default function BuscadorArancel() {
     };
 
     const handleInputChange = (e) => {
-        const valor = e.target.value;
-        setTextoDeLaBarra(valor);
-        realizarBusqueda(valor);
+        setTextoDeLaBarra(e.target.value);
     };
-
+// Registra la consulta al hacer clic en un resultado (HU 5.3 / SIS-24).
+    // Silencioso: si falla, no afecta la experiencia del despachante.
+    const handleSeleccionar = async (item) => {
+        setSeleccionado(item);
+        if (!token) return;
+        try {
+            await axios.post(
+                `${API}/historial/registrar/`,
+                { nomenclatura_id: item.id, query_origen: textoDeLaBarra },
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+        } catch (_) { /* auditoría no bloquea la UX */ }
+    };
     return (
         <div style={st.contenedor}>
             {/* ════════ COLUMNA IZQUIERDA: BÚSQUEDA + LISTA ════════ */}
@@ -80,7 +140,7 @@ export default function BuscadorArancel() {
                         return (
                             <div
                                 key={item.id}
-                                onClick={() => setSeleccionado(item)}
+                                onClick={() => handleSeleccionar(item)}
                                 style={{
                                     ...st.itemLista,
                                     ...(activo ? st.itemActivo : {}),
@@ -98,7 +158,7 @@ export default function BuscadorArancel() {
             {/* ════════ COLUMNA DERECHA: FICHA COMPLETA ════════ */}
             <div style={st.columnaDer}>
                 {seleccionado ? (
-                    <Ficha item={seleccionado} />
+                    <Ficha item={seleccionado} token={token} />
                 ) : (
                     <div style={st.fichaVacia}>
                         <div style={{ fontSize: '40px', marginBottom: '12px' }}>📋</div>
@@ -115,8 +175,8 @@ export default function BuscadorArancel() {
 //  Secciones diferenciadas (criterio 2.2.2 - chunking de Miller):
 //  General · Tributos · Calculadora CIF · Sustento Legal · Preferencias
 // ══════════════════════════════════════════════════════════════════════
-function Ficha({ item }) {
-    const tieneDocs = item.documentos_adicionales && item.documentos_adicionales.length > 0;
+function Ficha({ item, token }) {
+        const tieneDocs = item.documentos_adicionales && item.documentos_adicionales.length > 0;
 
     return (
         <div>
@@ -124,12 +184,15 @@ function Ficha({ item }) {
             <div style={st.fichaHeader}>
                 <div style={st.fichaCodigo}>{item.codigo_oficial}</div>
                 <div style={st.fichaTitulo}>{item.descripcion}</div>
-                {/* Ruta jerárquica — criterio 2.2.1 */}
-                {item.ruta && (
-                    <div style={st.fichaRuta}>
-                        Capítulo {item.capitulo} › {item.ruta}
-                    </div>
-                )}
+                {/* Botón guardar en favoritos — HU 5.2 (SIS-23) */}
+                <BotonFavorito key={item.id} nomenclaturaId={item.id} token={token} />
+                {/* Botón exportar a PDF — HU 5.1 (SIS-22) */}
+                <BotonExportarPDF
+                    key={`pdf-${item.id}`}
+                    nomenclaturaId={item.id}
+                    codigoOficial={item.codigo_oficial}
+                    token={token}
+                />
             </div>
 
             {/* ── SECCIÓN: DATOS GENERALES Y TRIBUTOS ── */}
@@ -164,6 +227,10 @@ function Ficha({ item }) {
                 ) : (
                     <p style={st.sinDatos}>Esta mercancía no requiere documentación adicional.</p>
                 )}
+            </Seccion>
+            {/* ── SECCIÓN: SUSTENTO LEGAL Y NOTAS EXPLICATIVAS — criterio 2.2.5 ── */}
+            <Seccion titulo="Sustento legal y notas explicativas" color="#7c3aed">
+                <SustentoLegal item={item} />
             </Seccion>
 
             {/* ── SECCIÓN: PREFERENCIAS ARANCELARIAS ── */}
@@ -250,6 +317,108 @@ function CalculadoraCIF({ gaPorcentaje }) {
     );
 }
 
+// ══════════════════════════════════════════════════════════════════════
+//  BOTÓN GUARDAR EN FAVORITOS — Historia 5.2 (SIS-23)
+//  Manda nomenclatura_id al backend con el token en el header.
+//  El backend previene duplicados (409) y aplica el tope de 50 (409).
+// ══════════════════════════════════════════════════════════════════════
+function BotonFavorito({ nomenclaturaId, token }) {
+    const [estado, setEstado] = useState('idle'); // idle | guardando | guardado | yaExiste | error
+    const [mensaje, setMensaje] = useState('');
+
+    const guardar = async () => {
+        setEstado('guardando');
+        setMensaje('');
+        try {
+            await axios.post(
+                `${API}/favoritos/`,
+                { nomenclatura_id: nomenclaturaId },
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+            setEstado('guardado');
+        } catch (err) {
+            const detalle = err.response?.data?.error || '';
+            if (err.response?.status === 409 && detalle.toLowerCase().includes('límite')) {
+                setEstado('error');
+                setMensaje(detalle);
+            } else if (err.response?.status === 409) {
+                setEstado('yaExiste');
+            } else if (err.response?.status === 401) {
+                setEstado('error');
+                setMensaje('Su sesión expiró. Vuelva a iniciar sesión.');
+            } else {
+                setEstado('error');
+                setMensaje('No se pudo guardar el favorito. Intente nuevamente.');
+            }
+        }
+    };
+
+    if (estado === 'guardado') {
+        return <div style={st.favGuardado}>★ Guardado en favoritos</div>;
+    }
+    if (estado === 'yaExiste') {
+        return <div style={st.favGuardado}>★ Ya está en tus favoritos</div>;
+    }
+
+    return (
+        <div>
+            <button onClick={guardar} disabled={estado === 'guardando'} style={st.favBoton}>
+                {estado === 'guardando' ? '☆ Guardando…' : '☆ Guardar en favoritos'}
+            </button>
+            {estado === 'error' && <div style={st.favError}>{mensaje}</div>}
+        </div>
+    );
+}
+// ══════════════════════════════════════════════════════════════════════
+//  BOTÓN EXPORTAR A PDF — Historia 5.1 (SIS-22)
+//  Descarga el reporte de clasificación firmado por el sistema.
+//  Recibe el PDF como blob y dispara la descarga vía link sintético.
+// ══════════════════════════════════════════════════════════════════════
+function BotonExportarPDF({ nomenclaturaId, codigoOficial, token }) {
+    const [descargando, setDescargando] = useState(false);
+    const [error, setError] = useState('');
+
+    const exportar = async () => {
+        setDescargando(true);
+        setError('');
+        try {
+            const res = await axios.get(
+                `${API}/exportar-pdf/${nomenclaturaId}/`,
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                    responseType: 'blob',
+                }
+            );
+            // Descarga vía link sintético — patrón estándar para blobs autenticados
+            const url = window.URL.createObjectURL(res.data);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `SISARM_${codigoOficial}.pdf`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        } catch (err) {
+            if (err.response?.status === 401) {
+                setError('Su sesión expiró. Vuelva a iniciar sesión.');
+            } else {
+                setError('No se pudo generar el PDF. Intente nuevamente.');
+            }
+        } finally {
+            setDescargando(false);
+        }
+    };
+
+    return (
+        <div>
+            <button onClick={exportar} disabled={descargando} style={st.pdfBoton}>
+                {descargando ? '⏳ Generando PDF…' : '📄 Exportar a PDF'}
+            </button>
+            {error && <div style={st.favError}>{error}</div>}
+        </div>
+    );
+}
+
 function FilaCalc({ etiqueta, valor, nota }) {
     return (
         <div style={st.filaCalc}>
@@ -276,6 +445,90 @@ function Dato({ etiqueta, valor }) {
         <div>
             <div style={st.datoEtiqueta}>{etiqueta}</div>
             <div style={st.datoValor}>{valor}</div>
+        </div>
+    );
+}
+// ══════════════════════════════════════════════════════════════════════
+//  SUSTENTO LEGAL — Historia 2.2 (SIS-32), criterio 2.2.5
+//  Consolida notas OMA, notas del capítulo, disposiciones legales únicas
+//  de los documentos requeridos y marco normativo general aplicable.
+// ══════════════════════════════════════════════════════════════════════
+function SustentoLegal({ item }) {
+    const disposicionesUnicas = [...new Set(
+        (item.documentos_adicionales || [])
+            .map(d => d.disposicion_legal)
+            .filter(d => d && d.trim())
+    )];
+
+    const tieneNotasPartida = item.notas_explicativas && item.notas_explicativas.trim();
+    const tieneNotasCapitulo = item.capitulo_notas_legales && item.capitulo_notas_legales.trim();
+
+    return (
+        <div>
+            {tieneNotasPartida && (
+                <div style={st.sustBloque}>
+                    <div style={st.sustEtiqueta}>📖 Notas explicativas (OMA)</div>
+                    <div style={st.sustTexto}>{item.notas_explicativas}</div>
+                </div>
+            )}
+
+            {tieneNotasCapitulo && (
+                <div style={st.sustBloque}>
+                    <div style={st.sustEtiqueta}>📜 Notas del Capítulo {item.capitulo}</div>
+                    <div style={st.sustTexto}>{item.capitulo_notas_legales}</div>
+                </div>
+            )}
+
+            {disposicionesUnicas.length > 0 && (
+                <div style={st.sustBloque}>
+                    <div style={st.sustEtiqueta}>⚖️ Disposiciones legales aplicables</div>
+                    <ul style={st.sustLista}>
+                        {disposicionesUnicas.map((d, i) => (
+                            <li key={i} style={st.sustItem}>
+                                <a href={urlNormativa(d)} target="_blank"
+                                    rel="noopener noreferrer" style={st.sustEnlace}>
+                                    {d}
+                                </a>
+                                <span style={st.sustHint}> ↗ documento oficial</span>
+                            </li>
+                         ))}
+                    </ul>
+                </div>
+            )}
+
+            <div style={st.sustBloque}>
+                <div style={st.sustEtiqueta}>🏛️ Marco normativo general</div>
+                <ul style={st.sustLista}>
+                    <li style={st.sustItem}>
+                        <a href="https://www.aduana.gob.bo/lga-view" target="_blank"
+                            rel="noopener noreferrer" style={st.sustEnlace}>
+                            <b>Ley 1990 (General de Aduanas)</b>
+                        </a>
+                        <span style={st.sustHint}> ↗</span> — Art. 6 (tributos), Art. 38 (documentación de despacho).
+                    </li>
+                    <li style={st.sustItem}>
+                        <a href="https://senavex.gob.bo/wp-content/uploads/2020/04/Decreto-Supremo-N%C2%B0-25870-Reglamento-Ley-General-de-Aduanas.pdf"
+                            target="_blank" rel="noopener noreferrer" style={st.sustEnlace}>
+                            <b>D.S. 25870 (Reglamento)</b>
+                        </a>
+                        <span style={st.sustHint}> ↗ PDF</span> — Art. 132, cálculo en cascada de tributos sobre base CIF.
+                    </li>
+                    <li style={st.sustItem}>
+                        <a href="https://www.wcoomd.org/en/topics/nomenclature/instrument-and-tools/hs-nomenclature-2022-edition.aspx"
+                            target="_blank" rel="noopener noreferrer" style={st.sustEnlace}>
+                            <b>Sistema Armonizado OMA — Nomenclatura 2022</b>
+                        </a>
+                        <span style={st.sustHint}> ↗</span> — Reglas Generales de Interpretación para clasificación.
+                    </li>
+                </ul>
+            </div>
+
+            {!tieneNotasPartida && !tieneNotasCapitulo && disposicionesUnicas.length === 0 && (
+                <p style={st.sustVacio}>
+                    No hay notas explicativas específicas cargadas para esta partida.
+                    Aplica el marco normativo general indicado arriba.
+                </p>
+            )}
         </div>
     );
 }
@@ -426,4 +679,50 @@ const st = {
         color: '#92400e',
     },
     cifNota: { fontSize: '11px', color: '#9ca3af', marginTop: '8px', lineHeight: 1.5 },
+    favBoton: {
+        marginTop: '12px', padding: '8px 14px', fontSize: '14px', fontWeight: 600,
+        color: '#92400e', backgroundColor: '#fffbeb', border: '1px solid #fcd34d',
+        borderRadius: '6px', cursor: 'pointer',
+    },
+    favGuardado: {
+        marginTop: '12px', padding: '8px 14px', fontSize: '14px', fontWeight: 600,
+        color: '#166534', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0',
+        borderRadius: '6px', display: 'inline-block',
+    },
+    favError: { marginTop: '8px', fontSize: '13px', color: '#dc2626' },
+    favError: { marginTop: '8px', fontSize: '13px', color: '#dc2626' },
+    pdfBoton: {
+        marginTop: '8px', padding: '8px 14px', fontSize: '14px', fontWeight: 600,
+        color: 'white', backgroundColor: '#1e3a8a', border: 'none',
+        borderRadius: '6px', cursor: 'pointer',
+    },
+    sustBloque: { marginBottom: '14px' },
+    sustEtiqueta: {
+        fontSize: '13px', fontWeight: 700, color: '#5b21b6',
+        marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '6px',
+    },
+    sustEnlace: {
+        color: '#7c3aed', textDecoration: 'none', fontWeight: 600,
+        borderBottom: '1px dashed #c4b5fd',
+    },
+    sustHint: {
+        color: '#9ca3af', fontSize: '11px', marginLeft: '4px',
+    },
+    sustTexto: {
+        fontSize: '13px', color: '#374151', lineHeight: 1.6,
+        padding: '10px 12px', backgroundColor: '#faf5ff',
+        border: '1px solid #e9d5ff', borderRadius: '6px',
+        whiteSpace: 'pre-wrap',
+    },
+    sustLista: { margin: 0, padding: 0, listStyle: 'none' },
+    sustItem: {
+        fontSize: '13px', color: '#374151', lineHeight: 1.5,
+        padding: '6px 10px', marginBottom: '4px',
+        backgroundColor: '#faf5ff', borderLeft: '3px solid #a855f7',
+        borderRadius: '4px',
+    },
+    sustVacio: {
+        color: '#6b7280', fontSize: '13px', fontStyle: 'italic', margin: 0,
+    },
+
 };

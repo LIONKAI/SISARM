@@ -4,7 +4,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from api import views
 from api.views import (
     registrar_usuario, buscar_nomenclatura,
-    explorador_capitulos, explorador_partidas, explorador_subpartidas, solicitar_recuperacion, restablecer_password
+    explorador_capitulos, explorador_partidas, explorador_subpartidas, solicitar_recuperacion, restablecer_password,
+    favoritos, favorito_detalle, exportar_pdf_clasificacion, historial_consultas, registrar_consulta_partida, 
 )
 
 urlpatterns = [
@@ -18,4 +19,11 @@ urlpatterns = [
     path('api/explorador/partida/<str:partida>/', explorador_subpartidas),
     path('api/recuperar-password/', views.solicitar_recuperacion, name='solicitar_recuperacion'),
     path('api/restablecer-password/', views.restablecer_password, name='restablecer_password'),
+    path('api/favoritos/', favoritos, name='favoritos'),
+    path('api/favoritos/<int:favorito_id>/', favorito_detalle, name='favorito_detalle'),
+    path('api/exportar-pdf/<int:nomenclatura_id>/', exportar_pdf_clasificacion, name='exportar_pdf'),
+    # ── Historial de consultas (HU 5.3 / SIS-24) ──
+    path('api/historial/', historial_consultas, name='historial_consultas'),
+    path('api/historial/registrar/', registrar_consulta_partida, name='registrar_consulta_partida'),
+
 ]

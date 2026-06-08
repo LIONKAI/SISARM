@@ -52,6 +52,9 @@ dependencies:
       # Variables de entorno (carga del archivo .env)
       - python-dotenv==1.2.2
 
+      # Cliente HTTP (usado por scripts de carga y utilidades)
+      - requests==2.34.2
+
       # Procesamiento de datos (carga de aranceles desde JSON/Excel)
       - pandas==3.0.3
       - numpy==2.4.6

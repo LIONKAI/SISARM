@@ -13,6 +13,9 @@ from django.conf import settings
 from django.utils import timezone
 from datetime import timedelta
 from .models import PasswordResetToken
+from rest_framework.permissions import IsAuthenticated
+from django.db.models import Q
+from datetime import datetime, timedelta
 from .models import (
     Capitulo, NomenclaturaArancelaria,
     DocumentoAdicional, PreferenciaArancelaria,
@@ -125,6 +128,9 @@ def buscar_nomenclatura(request):
             'descripcion': limpiar_descripcion(r.descripcion),
             'ruta': ' › '.join(ruta),
             'capitulo': r.capitulo.codigo if r.capitulo else None,
+            'capitulo_descripcion': r.capitulo.descripcion if r.capitulo else None, 
+            'capitulo_notas_legales': r.capitulo.notas_legales if r.capitulo else None,
+            'notas_explicativas': r.notas_explicativas,                                 
             'ga_porcentaje': str(r.ga_porcentaje) if r.ga_porcentaje is not None else '0',
             'ice_iehd': r.ice_iehd,
             'unidad_medida': r.unidad_medida,
@@ -132,7 +138,7 @@ def buscar_nomenclatura(request):
             'documentos_adicionales': docs,
             'preferencias': prefs,
         })
-
+    
     return Response({'resultados': data, 'total': len(data)}, status=status.HTTP_200_OK)
 
 
@@ -330,3 +336,446 @@ def restablecer_password(request):
     return Response({'message': 'Contraseña actualizada correctamente. Ya puede ingresar al sistema con su nueva contraseña.'},
                     status=status.HTTP_200_OK)
     
+# ══════════════════════════════════════════════════════════════════════
+# FAVORITOS — Historia 5.2 (SIS-23)
+# ══════════════════════════════════════════════════════════════════════
+
+LIMITE_FAVORITOS = 50  # Criterio 5.2.1 (Sellen & Whittaker, 2010)
+
+
+def _serializar_favorito(fav):
+    """Arma el dict que enviamos al frontend, con los datos clave de la partida."""
+    n = fav.nomenclatura
+    return {
+        'id': fav.id,
+        'nomenclatura_id': n.id,
+        'codigo_oficial': n.codigo_oficial,
+        'descripcion': limpiar_descripcion(n.descripcion),
+        'capitulo': n.capitulo.codigo if n.capitulo else None,
+        'ga_porcentaje': str(n.ga_porcentaje) if n.ga_porcentaje is not None else '0',
+        'ice_iehd': n.ice_iehd,
+        'unidad_medida': n.unidad_medida,
+        'notas_personales': fav.notas_personales or '',
+        'creado_en': fav.creado_en.isoformat(),
+    }
+
+
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def favoritos(request):
+    # ── Listar los favoritos del usuario autenticado ──
+    if request.method == 'GET':
+        favs = Favorito.objects.filter(
+            usuario=request.user
+        ).select_related('nomenclatura', 'nomenclatura__capitulo')
+        data = [_serializar_favorito(f) for f in favs]
+        return Response({
+            'favoritos': data,
+            'total': len(data),
+            'limite': LIMITE_FAVORITOS,
+        }, status=status.HTTP_200_OK)
+
+    # ── Agregar un favorito ──
+    nomenclatura_id = request.data.get('nomenclatura_id')
+    notas = request.data.get('notas_personales', '')
+
+    if not nomenclatura_id:
+        return Response(
+            {'error': 'Debes indicar la partida a guardar (nomenclatura_id)'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    # La partida debe existir y ser nodo hoja (subpartida nacional operativa)
+    try:
+        nomenclatura = NomenclaturaArancelaria.objects.get(id=nomenclatura_id, is_leaf=True)
+    except NomenclaturaArancelaria.DoesNotExist:
+        return Response(
+            {'error': 'La partida indicada no existe o no es una subpartida nacional'},
+            status=status.HTTP_404_NOT_FOUND
+        )
+
+    # Criterio 5.2.1 — tope de 50 favoritos por usuario
+    if Favorito.objects.filter(usuario=request.user).count() >= LIMITE_FAVORITOS:
+        return Response(
+            {'error': f'Alcanzaste el límite de {LIMITE_FAVORITOS} favoritos. '
+                      f'Elimina alguno antes de guardar otro.'},
+            status=status.HTTP_409_CONFLICT
+        )
+
+    # Evitar duplicados (el unique_together lo refuerza a nivel de BD)
+    if Favorito.objects.filter(usuario=request.user, nomenclatura=nomenclatura).exists():
+        return Response(
+            {'error': 'Esta partida ya está en tus favoritos'},
+            status=status.HTTP_409_CONFLICT
+        )
+
+    fav = Favorito.objects.create(
+        usuario=request.user,
+        nomenclatura=nomenclatura,
+        notas_personales=notas,
+    )
+    return Response(_serializar_favorito(fav), status=status.HTTP_201_CREATED)
+
+
+@api_view(['DELETE', 'PATCH'])
+@permission_classes([IsAuthenticated])
+def favorito_detalle(request, favorito_id):
+    # Privacidad (criterio 5.2.2): filtramos SIEMPRE por request.user.
+    # Así nadie puede borrar ni editar un favorito ajeno aunque conozca su id.
+    try:
+        fav = Favorito.objects.get(id=favorito_id, usuario=request.user)
+    except Favorito.DoesNotExist:
+        return Response({'error': 'Favorito no encontrado'},
+                        status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'DELETE':
+        fav.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    # PATCH — actualizar la nota personal
+    fav.notas_personales = request.data.get('notas_personales', fav.notas_personales)
+    fav.save(update_fields=['notas_personales'])
+    return Response(_serializar_favorito(fav), status=status.HTTP_200_OK)
+# ══════════════════════════════════════════════════════════════════════
+# EXPORTAR PDF DE CLASIFICACIÓN — Historia 5.1 (SIS-22)
+# Genera un reporte profesional con encabezado, identificación del
+# despachante, contenido íntegro de la partida y firma del sistema.
+# Librería: ReportLab (pura Python, sin dependencias del sistema).
+# ══════════════════════════════════════════════════════════════════════
+from django.http import HttpResponse
+from io import BytesIO
+from datetime import datetime
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import cm
+from reportlab.lib.colors import HexColor, black, white, grey
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from reportlab.lib.enums import TA_CENTER
+
+NOMBRES_ACUERDO_PDF = {
+    'CAN': 'Comunidad Andina (CAN)',
+    'ACE_36': 'ACE 36 — Mercosur',
+    'ACE_47': 'ACE 47',
+    'VEN': 'Venezuela',
+    'ACE_22_CHI': 'ACE 22 — Chile',
+    'ACE_22_PROT': 'ACE 22 — Protocolo',
+    'ACE_66_MEX': 'ACE 66 — México',
+}
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def exportar_pdf_clasificacion(request, nomenclatura_id):
+    # ── Datos de la partida ──
+    try:
+        n = (NomenclaturaArancelaria.objects
+             .select_related('capitulo')
+             .prefetch_related('documentos_adicionales', 'preferencias')
+             .get(id=nomenclatura_id, is_leaf=True))
+    except NomenclaturaArancelaria.DoesNotExist:
+        return Response({'error': 'Partida no encontrada'},
+                        status=status.HTTP_404_NOT_FOUND)
+
+    ahora = datetime.now()
+    id_reporte = f"SISARM-{ahora.strftime('%Y%m%d%H%M%S')}-{n.codigo_oficial.replace('.', '')}"
+
+    # ── Documento ──
+    buffer = BytesIO()
+    doc = SimpleDocTemplate(
+        buffer, pagesize=A4,
+        rightMargin=2*cm, leftMargin=2*cm, topMargin=2*cm, bottomMargin=2*cm,
+        # Criterio 5.1.3 — metadatos ISO 32000-1
+        title=f"Clasificación Arancelaria {n.codigo_oficial}",
+        author=f"SISARM - {request.user.username}",
+        subject="Reporte de Clasificación Arancelaria",
+    )
+
+    estilos = getSampleStyleSheet()
+    h1 = ParagraphStyle('h1', parent=estilos['Heading1'], fontSize=20,
+                        textColor=HexColor('#1e3a8a'), spaceAfter=4)
+    h2 = ParagraphStyle('h2', parent=estilos['Heading2'], fontSize=12,
+                        textColor=HexColor('#1e3a8a'), spaceAfter=8)
+    normal = ParagraphStyle('normal', parent=estilos['Normal'], fontSize=10, leading=14)
+    pequeno = ParagraphStyle('peq', parent=estilos['Normal'], fontSize=8,
+                              textColor=grey, leading=11, alignment=TA_CENTER)
+
+    el = []
+
+    # ── Encabezado ──
+    el.append(Paragraph('<b>SISARM</b>', h1))
+    el.append(Paragraph('Sistema de Clasificación Arancelaria y Gestión de Mercancías', normal))
+    el.append(Spacer(1, 4))
+    el.append(Paragraph('<b>Reporte de Clasificación Arancelaria</b>',
+                        ParagraphStyle('subtit', parent=normal, fontSize=14,
+                                       textColor=HexColor('#374151'), spaceAfter=12)))
+
+    # ── Identificación (criterio 5.1.2) ──
+    tabla_ident = Table([
+        ['Despachante:', request.user.username, 'Fecha:', ahora.strftime('%d/%m/%Y')],
+        ['ID de reporte:', id_reporte, 'Hora:', ahora.strftime('%H:%M:%S')],
+    ], colWidths=[2.8*cm, 6*cm, 1.5*cm, 4*cm])
+    tabla_ident.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, -1), HexColor('#f9fafb')),
+        ('TEXTCOLOR', (0, 0), (0, -1), HexColor('#6b7280')),
+        ('TEXTCOLOR', (2, 0), (2, -1), HexColor('#6b7280')),
+        ('FONTNAME', (0, 0), (0, -1), 'Helvetica-Bold'),
+        ('FONTNAME', (2, 0), (2, -1), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, -1), 9),
+        ('BOX', (0, 0), (-1, -1), 0.5, HexColor('#e5e7eb')),
+        ('INNERGRID', (0, 0), (-1, -1), 0.25, HexColor('#e5e7eb')),
+        ('LEFTPADDING', (0, 0), (-1, -1), 8),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 8),
+        ('TOPPADDING', (0, 0), (-1, -1), 6),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+    ]))
+    el.append(tabla_ident)
+    el.append(Spacer(1, 16))
+
+    # ── 1. Datos generales ──
+    el.append(Paragraph('1. Datos generales de la mercancía', h2))
+    descripcion = (n.descripcion or '').lstrip(' -').strip()
+    cap_texto = f"{n.capitulo.codigo} — {n.capitulo.descripcion}" if n.capitulo else '—'
+    t1 = Table([
+        ['Código arancelario', n.codigo_oficial],
+        ['Descripción', Paragraph(descripcion, normal)],
+        ['Capítulo', Paragraph(cap_texto, normal)],
+        ['Unidad de medida', n.unidad_medida or '—'],
+    ], colWidths=[5*cm, 11*cm])
+    t1.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (0, -1), HexColor('#eff6ff')),
+        ('TEXTCOLOR', (0, 0), (0, -1), HexColor('#1e3a8a')),
+        ('FONTNAME', (0, 0), (0, -1), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, -1), 10),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+        ('BOX', (0, 0), (-1, -1), 0.5, HexColor('#bfdbfe')),
+        ('INNERGRID', (0, 0), (-1, -1), 0.25, HexColor('#dbeafe')),
+        ('LEFTPADDING', (0, 0), (-1, -1), 8),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 8),
+        ('TOPPADDING', (0, 0), (-1, -1), 6),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+    ]))
+    el.append(t1)
+    el.append(Spacer(1, 14))
+
+    # ── 2. Tributos ──
+    el.append(Paragraph('2. Tributos aplicables', h2))
+    ga = f"{n.ga_porcentaje}%".replace('.', ',') if n.ga_porcentaje is not None else '—'
+    t2 = Table([
+        ['Concepto', 'Valor'],
+        ['Gravamen Arancelario (GA)', ga],
+        ['ICE / IEHD', n.ice_iehd or 'No aplica'],
+        ['IVA importación', '14,94% (sobre base CIF + GA)'],
+        ['Despacho en frontera', n.despacho_frontera or '—'],
+    ], colWidths=[8*cm, 8*cm])
+    t2.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), HexColor('#3b82f6')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), white),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, -1), 10),
+        ('ALIGN', (1, 0), (1, -1), 'CENTER'),
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+        ('BOX', (0, 0), (-1, -1), 0.5, HexColor('#3b82f6')),
+        ('INNERGRID', (0, 0), (-1, -1), 0.25, HexColor('#bfdbfe')),
+        ('LEFTPADDING', (0, 0), (-1, -1), 8),
+        ('TOPPADDING', (0, 0), (-1, -1), 6),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+    ]))
+    el.append(t2)
+    el.append(Spacer(1, 14))
+
+    # ── 3. Documentos adicionales ──
+    el.append(Paragraph('3. Documentación adicional requerida', h2))
+    docs = list(n.documentos_adicionales.all())
+    if docs:
+        filas = [['Tipo', 'Entidad emisora', 'Disposición legal']]
+        for d in docs:
+            filas.append([
+                d.tipo_doc or '',
+                Paragraph(d.entidad_emisora or '', normal),
+                Paragraph(d.disposicion_legal or '—', normal),
+            ])
+        t3 = Table(filas, colWidths=[3*cm, 7*cm, 6*cm])
+        t3.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), HexColor('#dc2626')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), white),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('FONTSIZE', (0, 0), (-1, -1), 9),
+            ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+            ('BOX', (0, 0), (-1, -1), 0.5, HexColor('#dc2626')),
+            ('INNERGRID', (0, 0), (-1, -1), 0.25, HexColor('#fecaca')),
+            ('BACKGROUND', (0, 1), (-1, -1), HexColor('#fef2f2')),
+            ('LEFTPADDING', (0, 0), (-1, -1), 8),
+            ('TOPPADDING', (0, 0), (-1, -1), 6),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+        ]))
+        el.append(t3)
+    else:
+        el.append(Paragraph('Esta mercancía no requiere documentación adicional.', normal))
+    el.append(Spacer(1, 14))
+
+    # ── 4. Preferencias arancelarias ──
+    el.append(Paragraph('4. Preferencias arancelarias por acuerdo comercial', h2))
+    prefs = list(n.preferencias.all())
+    if prefs:
+        filas = [['Acuerdo comercial', '% de desgravación', 'Estado']]
+        for p in prefs:
+            d = float(p.porcentaje_desgravacion)
+            estado = 'Liberado' if d >= 100 else ('Parcial' if d > 0 else 'Sin preferencia')
+            d_fmt = f"{d:.2f}".replace('.', ',') + '%'
+            filas.append([
+                NOMBRES_ACUERDO_PDF.get(p.tipo_acuerdo, p.tipo_acuerdo), d_fmt, estado
+            ])
+        t4 = Table(filas, colWidths=[8*cm, 4*cm, 4*cm])
+        t4.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), HexColor('#16a34a')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), white),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('FONTSIZE', (0, 0), (-1, -1), 9),
+            ('ALIGN', (1, 0), (-1, -1), 'CENTER'),
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+            ('BOX', (0, 0), (-1, -1), 0.5, HexColor('#16a34a')),
+            ('INNERGRID', (0, 0), (-1, -1), 0.25, HexColor('#bbf7d0')),
+            ('BACKGROUND', (0, 1), (-1, -1), HexColor('#f0fdf4')),
+            ('LEFTPADDING', (0, 0), (-1, -1), 8),
+            ('TOPPADDING', (0, 0), (-1, -1), 6),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+        ]))
+        el.append(t4)
+    else:
+        el.append(Paragraph('Sin preferencias arancelarias registradas.', normal))
+
+    el.append(Spacer(1, 24))
+
+    # ── Pie / firma del sistema (criterio 5.1.2) ──
+    el.append(Paragraph(f"Documento generado por <b>SISARM</b> · ID: {id_reporte}", pequeno))
+    el.append(Paragraph(
+        f"Reporte oficial emitido el {ahora.strftime('%d/%m/%Y a las %H:%M:%S')} (UTC-4 Bolivia).",
+        pequeno))
+
+    doc.build(el)
+
+    # ── Respuesta ──
+    buffer.seek(0)
+    response = HttpResponse(buffer.getvalue(), content_type='application/pdf')
+    response['Content-Disposition'] = (
+        f'attachment; filename="SISARM_{n.codigo_oficial}_{ahora.strftime("%Y%m%d_%H%M%S")}.pdf"'
+    )
+    # Registro en historial (HU 5.3 / SIS-24)
+    registrar_historial(
+        request, tipo='EXPLORACION',
+        query=f"Exportación PDF: {n.codigo_oficial}",
+        resultado_codigo=n.codigo_oficial,
+        metadata={'action': 'exportar_pdf'},
+    )
+    return response
+    # ══════════════════════════════════════════════════════════════════════
+# HISTORIAL DE CONSULTAS — Historia 5.3 (SIS-24)
+# Auditoría profesional según Ley 1990 Art. 38.
+# ══════════════════════════════════════════════════════════════════════
+
+def registrar_historial(request, tipo, query, resultado_codigo=None, metadata=None):
+    """
+    Registra una consulta en el historial del usuario autenticado.
+    Falla silenciosamente: la auditoría nunca debe romper la respuesta al usuario.
+    Si el usuario es anónimo, no se registra nada (criterio 5.3.2).
+    """
+    if not request.user.is_authenticated:
+        return
+    try:
+        HistorialConsulta.objects.create(
+            usuario=request.user,
+            tipo=tipo,
+            query=(query or '')[:1000],   # protección contra queries enormes
+            resultado_codigo=resultado_codigo,
+            metadata=metadata or {},
+        )
+    except Exception:
+        pass  # auditoría no bloquea la operación principal
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def historial_consultas(request):
+    """
+    Lista el historial del usuario autenticado con filtros opcionales.
+    Solo expone GET — inmutabilidad por diseño de API (criterio 5.3.1).
+    Filtros: ?q=texto & desde=YYYY-MM-DD & hasta=YYYY-MM-DD & tipo=BUSQUEDA
+    """
+    qs = HistorialConsulta.objects.filter(usuario=request.user)
+
+    # Palabra clave (en query o en el código resultante)
+    q = (request.query_params.get('q') or '').strip()
+    if q:
+        qs = qs.filter(Q(query__icontains=q) | Q(resultado_codigo__icontains=q))
+
+    # Rango de fechas
+    desde = request.query_params.get('desde')
+    hasta = request.query_params.get('hasta')
+    if desde:
+        try:
+            d = datetime.strptime(desde, '%Y-%m-%d')
+            qs = qs.filter(timestamp__gte=d)
+        except ValueError:
+            pass
+    if hasta:
+        try:
+            h = datetime.strptime(hasta, '%Y-%m-%d') + timedelta(days=1)
+            qs = qs.filter(timestamp__lt=h)
+        except ValueError:
+            pass
+
+    # Tipo de consulta
+    tipo = request.query_params.get('tipo')
+    if tipo:
+        qs = qs.filter(tipo=tipo)
+
+    LIMITE = 500
+    total = qs.count()
+    items = qs[:LIMITE]
+
+    data = [{
+        'id': h.id,
+        'tipo': h.tipo,
+        'tipo_display': h.get_tipo_display(),
+        'query': h.query,
+        'resultado_codigo': h.resultado_codigo,
+        'metadata': h.metadata,
+        'timestamp': h.timestamp.isoformat(),
+    } for h in items]
+    
+
+    return Response({
+        'historial': data,
+        'total_filtrado': total,
+        'mostrando': len(data),
+        'limite': LIMITE,
+    }, status=status.HTTP_200_OK)
+    
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def registrar_consulta_partida(request):
+    """
+    Registra una consulta deliberada: el despachante abrió la ficha de una
+    partida específica. Esto genera entradas significativas en el historial,
+    en lugar de capturar tecleo parcial (HU 5.3 / SIS-24).
+    """
+    nomenclatura_id = request.data.get('nomenclatura_id')
+    query_origen = (request.data.get('query_origen') or '').strip()
+
+    if not nomenclatura_id:
+        return Response({'error': 'Falta nomenclatura_id'},
+                        status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        n = NomenclaturaArancelaria.objects.get(id=nomenclatura_id, is_leaf=True)
+    except NomenclaturaArancelaria.DoesNotExist:
+        return Response({'error': 'Partida no encontrada'},
+                        status=status.HTTP_404_NOT_FOUND)
+
+    registrar_historial(
+        request, tipo='BUSQUEDA',
+        query=query_origen or f"Consulta directa: {n.codigo_oficial}",
+        resultado_codigo=n.codigo_oficial,
+        metadata={'descripcion': limpiar_descripcion(n.descripcion)[:200]},
+    )
+    return Response({'ok': True}, status=status.HTTP_201_CREATED)

@@ -4,6 +4,8 @@ import Auth from './Auth';
 import BuscadorArancel from './BuscadorArancel';
 import ExploradorArancel from './ExploradorArancel';
 import RestablecerPassword from './RestablecerPassword';
+import Favoritos from './Favoritos';
+import Historial from './Historial';
 
 // ══════════════════════════════════════════════════════════════════════
 //  CONTENEDOR DE RUTAS
@@ -59,9 +61,9 @@ function AppPrincipal() {
                         <div style={itemMenu('inicio')} onClick={() => setVista('inicio')}>🏠 Inicio</div>
                         <div style={itemMenu('buscador')} onClick={() => setVista('buscador')}>🔍 Buscar Mercancía</div>
                         <div style={itemMenu('explorador')} onClick={() => setVista('explorador')}>🌳 Explorar Arancel</div>
-                        <div style={itemMenu('analizar')} onClick={() => setVista('analizar')}>📊 Analizar Partida</div>
-                        <div style={itemMenu('asistente')} onClick={() => setVista('asistente')}>⚡ Asistente IA</div>
-                        <div style={itemMenu('exportar')} onClick={() => setVista('exportar')}>📥 Exportar Reporte</div>
+                        <div style={itemMenu('favoritos')} onClick={() => setVista('favoritos')}>⭐ Mis Favoritos</div>
+                        <div style={itemMenu('historial')} onClick={() => setVista('historial')}>📋 Historial</div>
+                        <div style={itemMenu('asistente')} onClick={() => setVista('asistente')}>⚡ Asistente IA</div>                        
                     </div>
 
                     <button onClick={() => setUsuario(null)} style={{ padding: '10px', backgroundColor: '#ef4444', border: 'none', color: 'white', borderRadius: '6px', cursor: 'pointer', marginTop: '20px' }}>
@@ -144,6 +146,26 @@ function AppPrincipal() {
                         </>
                     )}
 
+                    {/* FAVORITOS — HU 5.2 (SIS-23) */}
+                    {vista === 'favoritos' && (
+                        <>
+                            <h1 style={{ margin: '0 0 6px 0', fontSize: '24px', color: '#111827' }}>⭐ Mis Favoritos</h1>
+                            <p style={{ margin: '0 0 20px 0', color: '#6b7280', fontSize: '14px' }}>
+                                Partidas arancelarias que has guardado para acceso rápido.
+                            </p>
+                            <Favoritos token={usuario.access} />
+                        </>
+                    )}
+{/* HISTORIAL — HU 5.3 (SIS-24) */}
+                    {vista === 'historial' && (
+                        <>
+                            <h1 style={{ margin: '0 0 6px 0', fontSize: '24px', color: '#111827' }}>📋 Historial de Consultas</h1>
+                            <p style={{ margin: '0 0 20px 0', color: '#6b7280', fontSize: '14px' }}>
+                                Auditoría inmutable de todas tus consultas realizadas en SISARM.
+                            </p>
+                            <Historial token={usuario.access} />
+                        </>
+                    )}
                     {/* VISTAS EN CONSTRUCCIÓN */}
                     {['analizar', 'asistente', 'exportar'].includes(vista) && (
                         <div style={{ textAlign: 'center', padding: '80px 20px', color: '#9ca3af' }}>

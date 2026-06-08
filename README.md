@@ -12,11 +12,13 @@ Aplicación web full-stack para despachantes de aduana en Bolivia. Permite busca
 2. [Instalación de software base](#2-instalación-de-software-base)
 3. [Clonar el repositorio](#3-clonar-el-repositorio)
 4. [Configurar la base de datos](#4-configurar-la-base-de-datos)
-5. [Configurar el backend](#5-configurar-el-backend)
-6. [Configurar el frontend](#6-configurar-el-frontend)
-7. [Ejecutar el sistema](#7-ejecutar-el-sistema)
-8. [Credenciales de prueba](#8-credenciales-de-prueba)
-9. [Estructura del proyecto](#9-estructura-del-proyecto)
+5. [Crear el entorno Python — elegir Ruta A o Ruta B](#5-crear-el-entorno-python--elegir-ruta-a-o-ruta-b)
+6. [Configurar y poblar el backend (pasos comunes)](#6-configurar-y-poblar-el-backend-pasos-comunes)
+7. [Configurar el frontend](#7-configurar-el-frontend)
+8. [Ejecutar el sistema](#8-ejecutar-el-sistema)
+9. [Credenciales de prueba](#9-credenciales-de-prueba)
+10. [Estructura del proyecto](#10-estructura-del-proyecto)
+11. [Resolución de problemas comunes](#11-resolución-de-problemas-comunes)
 
 ---
 
@@ -24,42 +26,58 @@ Aplicación web full-stack para despachantes de aduana en Bolivia. Permite busca
 
 Software que debe estar instalado en su computadora:
 
-| Software   | Versión recomendada | Para qué se usa                  |
-|------------|---------------------|----------------------------------|
-| Python     | 3.12 o 3.13         | Ejecutar el backend Django       |
-| PostgreSQL | 15 o superior       | Base de datos                    |
-| Node.js    | 18 o superior       | Ejecutar el frontend React       |
-| Git        | Cualquier versión   | Clonar el repositorio            |
+| Software           | Versión recomendada | Para qué se usa                                  |
+|--------------------|---------------------|--------------------------------------------------|
+| Conda (Miniconda)  | 23 o superior       | Crear el entorno Python del backend (Ruta A)     |
+| Python             | 3.13                | Ejecutar el backend Django (solo si usa Ruta B)  |
+| PostgreSQL         | 15 o superior       | Base de datos                                    |
+| Node.js            | 18 o superior       | Ejecutar el frontend React                       |
+| Git                | Cualquier versión   | Clonar el repositorio                            |
+
+> **Importante:** el backend se instala con **una** de dos rutas alternativas. **Elija una y siga solo esa.**
+> - **Ruta A — conda + `environment.yml`** (recomendada). Trae Python 3.13 incluido en el entorno.
+> - **Ruta B — `venv` + `requirements.txt`** (alternativa). Requiere tener Python 3.13 ya instalado en el sistema.
 
 ---
 
 ## 2. Instalación de software base
 
-### 2.1 Python
+### 2.1 Conda (Miniconda) — solo si va a usar Ruta A
 
-Descargue desde [https://www.python.org/downloads/](https://www.python.org/downloads/). Durante la instalación, **marque la casilla "Add Python to PATH"**.
+Descargue Miniconda desde [https://www.anaconda.com/download/success](https://www.anaconda.com/download/success) (sección "Miniconda Installers") e instálelo con los valores por defecto.
 
 Verifique en una terminal:
 ```
+conda --version
+```
+
+Si ya tiene Anaconda instalada, no necesita Miniconda — sirve igual.
+
+### 2.2 Python 3.13 — solo si va a usar Ruta B
+
+Descargue desde [https://www.python.org/downloads/](https://www.python.org/downloads/) **Python 3.13**. Durante la instalación marque la casilla **"Add Python to PATH"**.
+
+Verifique:
+```
 python --version
 ```
-Debe mostrar `Python 3.12.x` o superior.
+Debe mostrar `Python 3.13.x`. Versiones anteriores (3.11, 3.12) no son compatibles con las dependencias del proyecto.
 
-### 2.2 PostgreSQL
+### 2.3 PostgreSQL
 
 Descargue desde [https://www.postgresql.org/download/](https://www.postgresql.org/download/) y siga el instalador. Durante la instalación le pedirá una contraseña para el usuario `postgres` — **anótela**, la necesitará en el paso 4.
 
 El instalador también incluye **pgAdmin**, una herramienta gráfica para administrar la BD.
 
-### 2.3 Node.js
+### 2.4 Node.js
 
-Descargue desde [https://nodejs.org/](https://nodejs.org/) (versión LTS). Verifique en terminal:
+Descargue desde [https://nodejs.org/](https://nodejs.org/) (versión LTS). Verifique:
 ```
 node --version
 npm --version
 ```
 
-### 2.4 Git
+### 2.5 Git
 
 Descargue desde [https://git-scm.com/downloads](https://git-scm.com/downloads). Acepte los valores por defecto.
 
@@ -97,11 +115,46 @@ El archivo `backend/settings.py` tiene configurado por defecto el usuario `postg
 
 ---
 
-## 5. Configurar el backend
+## 5. Crear el entorno Python — elegir Ruta A o Ruta B
 
-### 5.1 Crear el entorno virtual de Python
+> ⚠️ **Elija solo una de las dos rutas siguientes.** No ejecute ambas. Cuando termine la ruta elegida, continúe al paso 6.
+
+---
+
+### 🅰️ Ruta A — conda + environment.yml (recomendada)
+
+**Prerrequisito:** Miniconda instalado (paso 2.1).
 
 Desde la raíz del proyecto:
+
+```
+conda env create -f environment.yml
+```
+
+Este comando crea un entorno llamado `sisarm` con Python 3.13 y todas las dependencias del backend. Tarda 3-5 minutos la primera vez.
+
+Active el entorno:
+
+```
+conda activate sisarm
+```
+
+El prompt debería mostrar `(sisarm)` al inicio. **Cada vez** que abra una nueva terminal para trabajar en el backend deberá ejecutar `conda activate sisarm` antes de cualquier comando.
+
+Para actualizar el entorno tras un `git pull` futuro:
+```
+conda env update -f environment.yml --prune
+```
+
+✅ **Listo con Ruta A. Continúe al paso 6.**
+
+---
+
+### 🅱️ Ruta B — venv + requirements.txt (alternativa, sin conda)
+
+**Prerrequisito:** Python 3.13 instalado en el sistema (paso 2.2). No funcionará con Python 3.11 ni 3.12.
+
+Desde la raíz del proyecto, cree el entorno virtual:
 
 ```
 python -m venv venv
@@ -113,17 +166,28 @@ Active el entorno:
 - **Windows (CMD):** `venv\Scripts\activate.bat`
 - **Linux/Mac:** `source venv/bin/activate`
 
-El prompt debería mostrar `(venv)` al inicio.
+El prompt debería mostrar `(venv)` al inicio. **Cada vez** que abra una nueva terminal deberá reactivarlo con el mismo comando.
 
-### 5.2 Instalar dependencias
+Instale las dependencias:
 
 ```
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 5.3 Configurar variables de entorno
+> El archivo se llama **`requirements.txt`** (no "requeriments.txt"). Si pip responde "No such file or directory", revise la ortografía y que esté ejecutando el comando desde la raíz del proyecto.
 
-Copie el archivo `.env.example` a `.env`:
+✅ **Listo con Ruta B. Continúe al paso 6.**
+
+---
+
+## 6. Configurar y poblar el backend (pasos comunes)
+
+> Esta sección **es igual para ambas rutas**. Antes de empezar confirme que su entorno está activo: el prompt debe mostrar `(sisarm)` (Ruta A) o `(venv)` (Ruta B). Si no, vuelva al paso 5 y actívelo.
+
+### 6.1 Configurar variables de entorno
+
+Copie el archivo `.env.example` a `.env` en la raíz del proyecto:
 
 - **Windows:** `copy .env.example .env`
 - **Linux/Mac:** `cp .env.example .env`
@@ -132,7 +196,7 @@ Abra `.env` en un editor de texto y complete los valores marcados con `<CORCHETE
 
 - **EMAIL_HOST_USER** y **EMAIL_HOST_PASSWORD**: necesarios para que funcione la recuperación de contraseña por email. Siga las instrucciones dentro del propio `.env.example` para generar una "contraseña de aplicación" de Gmail.
 
-### 5.4 Aplicar migraciones (crear tablas)
+### 6.2 Aplicar migraciones (crear tablas)
 
 ```
 python manage.py migrate
@@ -140,7 +204,7 @@ python manage.py migrate
 
 Verá una lista de migraciones aplicándose. Al final debe terminar sin errores.
 
-### 5.5 Cargar los aranceles
+### 6.3 Cargar los aranceles
 
 El proyecto incluye 3 archivos JSON con los primeros 3 capítulos del Arancel Aduanero Boliviano. Cárguelos en la BD:
 
@@ -157,7 +221,7 @@ Documentos:     303
 Preferencias:   2485
 ```
 
-### 5.6 Crear un superusuario
+### 6.4 Crear un superusuario
 
 ```
 python manage.py createsuperuser
@@ -167,9 +231,9 @@ Complete usuario, email y contraseña. Esta cuenta le permitirá entrar al siste
 
 ---
 
-## 6. Configurar el frontend
+## 7. Configurar el frontend
 
-Abra **una segunda terminal** (mantenga la primera abierta para el backend).
+Abra **una segunda terminal** (mantenga la primera abierta para el backend). En esta terminal **no** necesita activar conda ni venv — el frontend usa npm de forma independiente.
 
 ```
 cd frontend
@@ -186,13 +250,17 @@ VITE_API_URL=http://127.0.0.1:8080/api
 
 ---
 
-## 7. Ejecutar el sistema
+## 8. Ejecutar el sistema
 
 Necesita **dos terminales abiertas simultáneamente**, una para el backend y otra para el frontend.
 
 ### Terminal 1 — Backend
 
-En la raíz del proyecto, con el entorno virtual activado:
+En la raíz del proyecto, con el entorno activado:
+- Ruta A: `conda activate sisarm`
+- Ruta B: `source venv/bin/activate` (o el equivalente Windows del paso 5)
+
+Luego:
 ```
 python manage.py runserver 8080
 ```
@@ -228,9 +296,9 @@ http://127.0.0.1:8080/admin/
 
 ---
 
-## 8. Credenciales de prueba
+## 9. Credenciales de prueba
 
-Use el superusuario que creó en el paso 5.6, o cree un usuario nuevo desde la pantalla de registro de la aplicación.
+Use el superusuario que creó en el paso 6.4, o cree un usuario nuevo desde la pantalla de registro de la aplicación.
 
 **Reglas de validación del registro (HU 1.1 v2):**
 - Usuario: 3-20 caracteres, sin espacios. Solo letras, números, "_", "." y "-".
@@ -242,7 +310,7 @@ Use un correo que esté registrado en el sistema. El enlace de recuperación se 
 
 ---
 
-## 9. Estructura del proyecto
+## 10. Estructura del proyecto
 
 ```
 SISARM/
@@ -271,8 +339,8 @@ SISARM/
 ├── arancel_02.json         Datos del Capítulo 2 — Carne
 ├── arancel_03.json         Datos del Capítulo 3 — Pescados
 ├── cargar_consolidado.py   Script para poblar la BD con los JSON
-├── requirements.txt        Dependencias Python
-├── environment.yml         Dependencias para entornos Conda
+├── environment.yml         Entorno conda (Ruta A — recomendada)
+├── requirements.txt        Dependencias pip (Ruta B — alternativa)
 ├── manage.py               Punto de entrada de Django
 ├── .env.example            Plantilla de variables de entorno
 └── README.md               Este archivo
@@ -280,7 +348,16 @@ SISARM/
 
 ---
 
-## Resolución de problemas comunes
+## 11. Resolución de problemas comunes
+
+**`pip install -r requirements.txt` responde "No such file or directory":**
+Revise la ortografía — el archivo se llama `requirements.txt`, no `requeriments.txt`. Confirme que está en la raíz del proyecto con `ls` (Linux/Mac) o `dir` (Windows).
+
+**`pip install -r requirements.txt` falla con errores de versión de Python:**
+Las dependencias requieren **Python 3.13**. Verifique con `python --version`. Si tiene 3.11 o 3.12, instale Python 3.13 (paso 2.2) o use la Ruta A con conda, que ya trae la versión correcta.
+
+**`conda env create -f environment.yml` falla:**
+Ejecute primero `conda update -n base conda` para actualizar conda. Si el problema persiste, elimine un entorno previo con `conda env remove -n sisarm` y vuelva a crearlo.
 
 **Error "Connection refused" al iniciar Django:**
 La BD PostgreSQL no está corriendo. Inicie el servicio de PostgreSQL desde los servicios de Windows o desde pgAdmin.
