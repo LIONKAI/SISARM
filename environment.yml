@@ -55,6 +55,9 @@ dependencies:
       # Cliente HTTP (usado por scripts de carga y utilidades)
       - requests==2.34.2
 
+      # Generación de PDFs (reportes, comprobantes)
+      - reportlab==4.5.1
+
       # Procesamiento de datos (carga de aranceles desde JSON/Excel)
       - pandas==3.0.3
       - numpy==2.4.6
