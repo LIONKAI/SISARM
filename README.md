@@ -46,10 +46,29 @@ Software que debe estar instalado en su computadora:
 
 Descargue Miniconda desde [https://www.anaconda.com/download/success](https://www.anaconda.com/download/success) (sección "Miniconda Installers") e instálelo con los valores por defecto.
 
-Verifique en una terminal:
+#### Cómo abrir el prompt de conda (Windows)
+
+Tras instalar Miniconda o Anaconda, tiene **tres maneras** de obtener una terminal con conda activado. Elija la que le resulte más cómoda:
+
+1. **Desde el menú Inicio (la más rápida).** Presione la tecla **Windows** y escriba `Anaconda Prompt` o `Miniconda Prompt`. Es un acceso directo que ya viene configurado con conda activo. Verá `(base)` al inicio del prompt.
+
+2. **Desde PowerShell o CMD existente.** Si abre una PowerShell o CMD normal, conda **no estará disponible** hasta que lo inicialice una vez con:
+   ```
+   conda init powershell
+   ```
+   (o `conda init cmd.exe` para CMD). Cierre la ventana, abra una nueva, y debería ver `(base)` al inicio.
+
+3. **Desde Git Bash o WSL.** Si usa Git Bash o WSL, ejecute `conda init bash` desde el Anaconda Prompt una vez, cierre y vuelva a abrir.
+
+> Si su terminal **no muestra `(base)`** al inicio, conda no está activo y los comandos `conda env create ...` o `conda activate ...` van a fallar. Vuelva a la opción 1 o 2 antes de continuar.
+
+#### Verificación
+
+Con el prompt de conda abierto, ejecute:
 ```
 conda --version
 ```
+Debe mostrar algo como `conda 24.x.x`.
 
 Si ya tiene Anaconda instalada, no necesita Miniconda — sirve igual.
 
@@ -85,12 +104,20 @@ Descargue desde [https://git-scm.com/downloads](https://git-scm.com/downloads). 
 
 ## 3. Clonar el repositorio
 
-Abra una terminal en la carpeta donde quiera guardar el proyecto y ejecute:
+Abra una terminal en la carpeta donde quiera guardar el proyecto (por ejemplo `C:\Users\TuUsuario\Documentos\` en Windows o `~/Proyectos/` en Linux/Mac) y ejecute:
 
 ```
 git clone https://github.com/LIONKAI/SISARM.git
 cd SISARM
 ```
+
+Después del `cd SISARM` la terminal queda **dentro** de la carpeta del proyecto. Esa carpeta es la que en este README se llama **"raíz del proyecto"** o **"carpeta `SISARM/`"**: contiene `manage.py`, `environment.yml`, `requirements.txt`, `frontend/`, `backend/`, `api/`, etc.
+
+> **Importante:** salvo cuando el README diga explícitamente lo contrario (sección 7 frontend), todos los comandos posteriores deben ejecutarse **estando ubicados en esta raíz**. Si abre una nueva terminal en otro momento, lo primero que debe hacer es navegar a esta carpeta con `cd ruta\donde\esté\SISARM` antes de cualquier otro comando.
+>
+> Para verificar dónde está parado:
+> - **Windows:** `cd` (sin argumentos) o `dir manage.py` — si lista el archivo, está en el lugar correcto.
+> - **Linux/Mac:** `pwd` y `ls manage.py`.
 
 ---
 
@@ -123,9 +150,11 @@ El archivo `backend/settings.py` tiene configurado por defecto el usuario `postg
 
 ### 🅰️ Ruta A — conda + environment.yml (recomendada)
 
-**Prerrequisito:** Miniconda instalado (paso 2.1).
+**Prerrequisito:** Miniconda instalado (paso 2.1) y prompt de conda abierto (subsección "Cómo abrir el prompt de conda" del paso 2.1). El prompt debe mostrar `(base)` al inicio.
 
-Desde la raíz del proyecto:
+**Ubicación:** la terminal debe estar **dentro de la carpeta `SISARM/`** (la que se creó al clonar). Si no lo está, navegue con `cd ruta\hacia\SISARM`. Verifique con `dir environment.yml` (Windows) o `ls environment.yml` (Linux/Mac) — el archivo debe aparecer.
+
+Una vez ubicado en la raíz, ejecute:
 
 ```
 conda env create -f environment.yml
@@ -154,7 +183,9 @@ conda env update -f environment.yml --prune
 
 **Prerrequisito:** Python 3.13 instalado en el sistema (paso 2.2). No funcionará con Python 3.11 ni 3.12.
 
-Desde la raíz del proyecto, cree el entorno virtual:
+**Ubicación:** la terminal debe estar **dentro de la carpeta `SISARM/`** (la que se creó al clonar). Verifique con `dir requirements.txt` (Windows) o `ls requirements.txt` (Linux/Mac) — el archivo debe aparecer.
+
+Una vez ubicado en la raíz, cree el entorno virtual:
 
 ```
 python -m venv venv
@@ -183,7 +214,11 @@ pip install -r requirements.txt
 
 ## 6. Configurar y poblar el backend (pasos comunes)
 
-> Esta sección **es igual para ambas rutas**. Antes de empezar confirme que su entorno está activo: el prompt debe mostrar `(sisarm)` (Ruta A) o `(venv)` (Ruta B). Si no, vuelva al paso 5 y actívelo.
+> Esta sección **es igual para ambas rutas**. Antes de empezar confirme dos cosas:
+> 1. **Ubicación:** la terminal debe seguir estando en la raíz del proyecto (carpeta `SISARM/`, donde está `manage.py`). Verifique con `dir manage.py` (Windows) o `ls manage.py` (Linux/Mac).
+> 2. **Entorno activo:** el prompt debe mostrar `(sisarm)` (Ruta A) o `(venv)` (Ruta B) al inicio. Si no, vuelva al paso 5 y actívelo.
+>
+> **Todos los comandos de esta sección 6 se ejecutan desde la raíz del proyecto, no desde `frontend/` ni desde `backend/`.**
 
 ### 6.1 Configurar variables de entorno
 
@@ -233,34 +268,90 @@ Complete usuario, email y contraseña. Esta cuenta le permitirá entrar al siste
 
 ## 7. Configurar el frontend
 
-Abra **una segunda terminal** (mantenga la primera abierta para el backend). En esta terminal **no** necesita activar conda ni venv — el frontend usa npm de forma independiente.
+> La primera terminal (la del backend) **debe quedar abierta**. No la cierre ni use Ctrl+C todavía. Para el frontend abrirá una **segunda terminal independiente**.
+
+### 7.1 Abrir una segunda terminal en la carpeta del proyecto
+
+Abra una nueva ventana de terminal (PowerShell, CMD, Anaconda Prompt o la que prefiera — para el frontend no importa porque **no se usa conda ni venv aquí**, npm es independiente).
+
+Navegue hasta **la misma carpeta `SISARM/` donde clonó el proyecto** en el paso 3. Por ejemplo:
+
+```
+cd C:\Users\TuUsuario\Documentos\SISARM
+```
+
+(Reemplace `C:\Users\TuUsuario\Documentos\SISARM` por la ruta real donde tenga el proyecto en su computadora.)
+
+Verifique que está en la raíz:
+- **Windows:** `dir frontend` debe listar la carpeta `frontend/`.
+- **Linux/Mac:** `ls frontend` debe listar la carpeta `frontend/`.
+
+### 7.2 Entrar a la carpeta `frontend/`
+
+Desde la raíz del proyecto, entre a la subcarpeta del frontend:
 
 ```
 cd frontend
+```
+
+A partir de aquí su terminal está dentro de `SISARM/frontend/`. **Todos los comandos del frontend (npm install, npm run dev) deben ejecutarse desde aquí**, no desde la raíz, no desde `backend/`, no desde ningún otro lado.
+
+Verifique con:
+- **Windows:** `dir package.json` debe listar el archivo.
+- **Linux/Mac:** `ls package.json` debe listar el archivo.
+
+### 7.3 Instalar dependencias del frontend
+
+Estando **dentro de `SISARM/frontend/`**, ejecute:
+
+```
 npm install
 ```
 
-Esto instalará todas las dependencias de React. Tarda 1-2 minutos la primera vez.
+Esto descarga e instala todas las dependencias de React/Vite en una carpeta `node_modules/` que se crea dentro de `frontend/`. Tarda 1-2 minutos la primera vez. Verá una barra de progreso y al final un resumen con la cantidad de paquetes instalados. Si aparecen warnings amarillos puede ignorarlos; solo los errores rojos importan.
 
-Cree un archivo `.env` dentro de la carpeta `frontend/` con este contenido:
+> Si `npm install` falla con "ENOENT package.json no encontrado", está en la carpeta equivocada. Vuelva a 7.2.
+
+### 7.4 Crear el archivo `.env` del frontend
+
+Estando **dentro de `SISARM/frontend/`** (no en la raíz), cree un archivo nuevo llamado `.env` con este único contenido:
 
 ```
 VITE_API_URL=http://127.0.0.1:8080/api
 ```
 
+> **Importante:** este `.env` es **distinto** del `.env` de la raíz que creó en el paso 6.1. Son dos archivos `.env` separados, en dos carpetas distintas, con distintas variables. No los confunda ni los mezcle.
+
+Para crearlo rápido desde la terminal:
+- **Windows (PowerShell):** `echo "VITE_API_URL=http://127.0.0.1:8080/api" | Out-File -Encoding utf8 .env`
+- **Windows (CMD):** `echo VITE_API_URL=http://127.0.0.1:8080/api > .env`
+- **Linux/Mac:** `echo "VITE_API_URL=http://127.0.0.1:8080/api" > .env`
+
+O bien créelo manualmente con cualquier editor de texto (VS Code, Notepad, nano) guardándolo dentro de `SISARM/frontend/.env`.
+
 ---
 
 ## 8. Ejecutar el sistema
 
-Necesita **dos terminales abiertas simultáneamente**, una para el backend y otra para el frontend.
+El sistema necesita **dos procesos corriendo simultáneamente**, cada uno en su propia terminal. No los combine en una sola ventana.
+
+| Terminal   | Carpeta donde se ejecuta            | Entorno     | Comando                          |
+|------------|-------------------------------------|-------------|----------------------------------|
+| Terminal 1 | Raíz del proyecto (`SISARM/`)       | conda/venv  | `python manage.py runserver 8080` |
+| Terminal 2 | Subcarpeta `SISARM/frontend/`       | (ninguno)   | `npm run dev`                     |
 
 ### Terminal 1 — Backend
 
-En la raíz del proyecto, con el entorno activado:
-- Ruta A: `conda activate sisarm`
-- Ruta B: `source venv/bin/activate` (o el equivalente Windows del paso 5)
+Esta es la **primera terminal**, la que vino usando desde el paso 5. Debe cumplir:
 
-Luego:
+1. **Ubicación:** raíz del proyecto, la carpeta `SISARM/` donde está `manage.py`. Si no está ahí, navegue con `cd ruta\hacia\SISARM`.
+2. **Entorno activo:** el prompt muestra `(sisarm)` o `(venv)` al inicio. Si no, actívelo:
+   - **Ruta A:** `conda activate sisarm`
+   - **Ruta B (Windows PowerShell):** `.\venv\Scripts\activate`
+   - **Ruta B (Windows CMD):** `venv\Scripts\activate.bat`
+   - **Ruta B (Linux/Mac):** `source venv/bin/activate`
+
+Luego ejecute:
 ```
 python manage.py runserver 8080
 ```
@@ -270,9 +361,16 @@ Verá:
 Starting development server at http://127.0.0.1:8080/
 ```
 
+**No cierre esta terminal ni presione Ctrl+C** mientras esté usando el sistema. Mientras no aparezca un nuevo prompt, el servidor sigue corriendo — eso es lo correcto.
+
 ### Terminal 2 — Frontend
 
-En la carpeta `frontend/`:
+Esta es la **segunda terminal**, la que abrió en el paso 7.1. Debe cumplir:
+
+1. **Ubicación:** subcarpeta `SISARM/frontend/`, no la raíz del proyecto. Verifique con `dir package.json` (Windows) o `ls package.json` (Linux/Mac). Si está en la raíz, ejecute `cd frontend`.
+2. **Entorno:** ninguno. No active conda ni venv aquí.
+
+Luego ejecute:
 ```
 npm run dev
 ```
@@ -282,17 +380,23 @@ Verá:
 Local:   http://localhost:5173/
 ```
 
+Igual que con el backend, **no cierre esta terminal** mientras use el sistema.
+
 ### Acceder a la aplicación
 
-Abra en su navegador:
+Con **ambas** terminales corriendo, abra su navegador favorito y visite:
 ```
 http://localhost:5173/
 ```
 
-Para acceder al panel de administración de Django:
+Para el panel de administración de Django:
 ```
 http://127.0.0.1:8080/admin/
 ```
+
+### Detener el sistema
+
+Cuando termine, presione **Ctrl+C** en cada terminal por separado. Las dependencias y la BD quedan intactas — la próxima vez solo necesita reactivar el entorno (`conda activate sisarm`) y volver a correr `python manage.py runserver 8080` + `npm run dev` (desde sus carpetas correspondientes).
 
 ---
 
@@ -370,6 +474,15 @@ Verifique que `VITE_API_URL=http://127.0.0.1:8080/api` esté en `frontend/.env` 
 
 **No llega el email de recuperación:**
 Verifique que la "contraseña de aplicación" de Gmail esté correctamente generada y copiada sin espacios en `.env`. Revise la carpeta de Spam en su correo.
+
+**`npm install` responde "ENOENT package.json no encontrado":**
+Está ejecutando el comando desde la carpeta equivocada. `npm install` solo funciona **dentro de `SISARM/frontend/`**, donde está el `package.json` del frontend. Ejecute `cd frontend` desde la raíz del proyecto y vuelva a intentar.
+
+**`python manage.py ...` responde "No such file or directory" o "can't open file 'manage.py'":**
+Está ejecutando el comando desde la carpeta equivocada. Los comandos de Django (`migrate`, `runserver`, `createsuperuser`, `cargar_consolidado.py`) corren desde la **raíz del proyecto** (`SISARM/`), no desde `frontend/` ni desde `backend/`. Ejecute `cd ..` hasta volver a la raíz y verifique con `dir manage.py` (Windows) o `ls manage.py` (Linux/Mac).
+
+**`conda activate sisarm` o `npm` responden "no se reconoce como comando":**
+Para conda: vea la subsección "Cómo abrir el prompt de conda" del paso 2.1. Para npm: cierre y reabra la terminal después de instalar Node.js, o reinicie la computadora.
 
 ---
 
