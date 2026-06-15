@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Auth from './Auth';
 import BuscadorArancel from './BuscadorArancel';
@@ -6,6 +6,13 @@ import ExploradorArancel from './ExploradorArancel';
 import RestablecerPassword from './RestablecerPassword';
 import Favoritos from './Favoritos';
 import Historial from './Historial';
+import AsistenteIA from './AsistenteIA';
+import {
+    guardarSesion, leerSesion, limpiarSesion,
+    actualizarVistaSesion, tokenVigente, refrescarAccessToken,
+} from './session';
+import AvisoInactividad from './AvisoInactividad';
+import useIdleTimeout from './useIdleTimeout';
 
 // ══════════════════════════════════════════════════════════════════════
 //  CONTENEDOR DE RUTAS
@@ -29,11 +36,59 @@ export default function App() {
 function AppPrincipal() {
     const [usuario, setUsuario] = useState(null);
     const [menuAbierto, setMenuAbierto] = useState(true);
-    const [vista, setVista] = useState('inicio');
+    const [vista, setVistaState] = useState('inicio');
+    const [hidratando, setHidratando] = useState(true);
+
+    // ── HU 6.1: Restaurar sesion al cargar (incluso tras F5) ──
+    useEffect(() => {
+        const sesion = leerSesion();
+        if (!sesion) { setHidratando(false); return; }
+        (async () => {
+            if (tokenVigente(sesion.access)) {
+                setUsuario({ access: sesion.access, refresh: sesion.refresh, username: sesion.username });
+                if (sesion.vista) setVistaState(sesion.vista);
+            } else {
+                const nuevoAccess = await refrescarAccessToken();
+                if (nuevoAccess) {
+                    setUsuario({ access: nuevoAccess, refresh: sesion.refresh, username: sesion.username });
+                    if (sesion.vista) setVistaState(sesion.vista);
+                } else {
+                    limpiarSesion();
+                }
+            }
+            setHidratando(false);
+        })();
+    }, []);
+
+    // Cada cambio de vista se persiste para sobrevivir a un recargo.
+    const setVista = (nuevaVista) => {
+        setVistaState(nuevaVista);
+        actualizarVistaSesion(nuevaVista);
+    };
 
     const handleLoginSuccess = (datosUsuario) => {
+        guardarSesion({ ...datosUsuario, username: datosUsuario.username, vista: 'inicio' });
         setUsuario(datosUsuario);
+        setVistaState('inicio');
     };
+
+    const cerrarSesion = () => {
+        limpiarSesion();
+        setUsuario(null);
+        setVistaState('inicio');
+    };
+
+    // ── HU 6.3: Auto-logout por inactividad ──
+    const { mostrarAviso, segundosRestantes, mantenerActiva, forzarCierre } =
+        useIdleTimeout({ activo: !!usuario, totalMs: 15 * 60 * 1000, avisoMs: 60 * 1000, onLogout: cerrarSesion });
+
+    if (hidratando) {
+        return (
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#f3f4f6', fontFamily: 'Arial, sans-serif', color: '#6b7280' }}>
+                Restaurando sesion...
+            </div>
+        );
+    }
 
     if (!usuario) {
         return <Auth onLoginSuccess={handleLoginSuccess} />;
@@ -42,31 +97,73 @@ function AppPrincipal() {
     const itemMenu = (nombre) => ({
         padding: '10px 14px',
         cursor: 'pointer',
-        borderRadius: '6px',
-        color: vista === nombre ? 'white' : '#cbd5e1',
-        backgroundColor: vista === nombre ? '#3b82f6' : 'transparent',
-        transition: 'all 0.2s',
+        borderRadius: 'var(--radius-sm)',
+        color: vista === nombre ? 'white' : 'var(--c-sidebar-text)',
+        backgroundColor: vista === nombre ? 'var(--c-sidebar-active)' : 'transparent',
+        transition: 'background-color var(--transition-fast), color var(--transition-fast)',
+        fontSize: 'var(--fs-md)',
+        fontWeight: vista === nombre ? 600 : 500,
+        userSelect: 'none',
     });
 
+    const itemMenuHover = (e) => {
+        if (e.currentTarget.dataset.activo === 'true') return;
+        e.currentTarget.style.backgroundColor = 'var(--c-sidebar-hover)';
+        e.currentTarget.style.color = 'white';
+    };
+    const itemMenuLeave = (e) => {
+        if (e.currentTarget.dataset.activo === 'true') return;
+        e.currentTarget.style.backgroundColor = 'transparent';
+        e.currentTarget.style.color = 'var(--c-sidebar-text)';
+    };
+
+    const navItem = (clave, etiqueta) => (
+        <div
+            style={itemMenu(clave)}
+            data-activo={vista === clave}
+            onMouseEnter={itemMenuHover}
+            onMouseLeave={itemMenuLeave}
+            onClick={() => setVista(clave)}
+        >{etiqueta}</div>
+    );
+
     return (
-        <div style={{ display: 'flex', height: '100vh', fontFamily: 'Arial, sans-serif', backgroundColor: '#f3f4f6', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', height: '100vh', fontFamily: 'var(--font-sans)', backgroundColor: 'var(--c-bg)', overflow: 'hidden' }}>
 
             {/* BARRA LATERAL */}
             {menuAbierto && (
-                <div style={{ width: '260px', backgroundColor: '#1e293b', color: 'white', padding: '20px', display: 'flex', flexDirection: 'column', flexShrink: 0 }}>
-                    <h2 style={{ margin: '0 0 5px 0', fontSize: '24px', fontWeight: 'bold' }}>SISARM</h2>
-                    <p style={{ margin: '0 0 30px 0', fontSize: '12px', color: '#94a3b8' }}>Sistema de Clasificación</p>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', flexGrow: 1 }}>
-                        <div style={itemMenu('inicio')} onClick={() => setVista('inicio')}>🏠 Inicio</div>
-                        <div style={itemMenu('buscador')} onClick={() => setVista('buscador')}>🔍 Buscar Mercancía</div>
-                        <div style={itemMenu('explorador')} onClick={() => setVista('explorador')}>🌳 Explorar Arancel</div>
-                        <div style={itemMenu('favoritos')} onClick={() => setVista('favoritos')}>⭐ Mis Favoritos</div>
-                        <div style={itemMenu('historial')} onClick={() => setVista('historial')}>📋 Historial</div>
-                        <div style={itemMenu('asistente')} onClick={() => setVista('asistente')}>⚡ Asistente IA</div>                        
+                <div style={{
+                    width: '260px', backgroundColor: 'var(--c-sidebar-bg)', color: 'white',
+                    padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', flexShrink: 0,
+                    boxShadow: 'var(--shadow-md)',
+                }}>
+                    <div style={{ marginBottom: 'var(--sp-8)' }}>
+                        <h2 style={{ margin: 0, fontSize: 'var(--fs-2xl)', fontWeight: 700, color: 'white', letterSpacing: '-0.02em' }}>SISARM</h2>
+                        <p style={{ margin: '4px 0 0 0', fontSize: 'var(--fs-xs)', color: 'var(--c-text-soft)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                            Clasificación Arancelaria
+                        </p>
                     </div>
 
-                    <button onClick={() => setUsuario(null)} style={{ padding: '10px', backgroundColor: '#ef4444', border: 'none', color: 'white', borderRadius: '6px', cursor: 'pointer', marginTop: '20px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-1)', flexGrow: 1 }}>
+                        {navItem('inicio',     '🏠  Inicio')}
+                        {navItem('buscador',   '🔍  Buscar Mercancía')}
+                        {navItem('explorador', '🌳  Explorar Arancel')}
+                        {navItem('favoritos',  '⭐  Mis Favoritos')}
+                        {navItem('historial',  '📋  Historial')}
+                        {navItem('asistente',  '⚡  Asistente IA')}
+                    </div>
+
+                    <button
+                        onClick={cerrarSesion}
+                        style={{
+                            padding: '10px 14px', backgroundColor: 'transparent',
+                            border: '1px solid rgba(255,255,255,0.15)', color: 'var(--c-sidebar-text)',
+                            borderRadius: 'var(--radius-sm)', cursor: 'pointer',
+                            marginTop: 'var(--sp-5)', fontSize: 'var(--fs-sm)', fontWeight: 500,
+                        }}
+                        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--c-danger)'; e.currentTarget.style.color = 'white'; e.currentTarget.style.borderColor = 'var(--c-danger)'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--c-sidebar-text)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
+                    >
                         Cerrar Sesión
                     </button>
                 </div>
@@ -76,22 +173,32 @@ function AppPrincipal() {
             <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
 
                 {/* TOP BAR */}
-                <div style={{ backgroundColor: 'white', padding: '15px 30px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb', flexShrink: 0 }}>
-                    <button onClick={() => setMenuAbierto(!menuAbierto)} style={{ background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer' }}>☰</button>
+                <div style={{
+                    backgroundColor: 'var(--c-surface)', padding: '14px 28px',
+                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    borderBottom: '1px solid var(--c-border)', flexShrink: 0,
+                }}>
+                    <button
+                        onClick={() => setMenuAbierto(!menuAbierto)}
+                        style={{ background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer', color: 'var(--c-text-muted)', padding: 'var(--sp-1) var(--sp-2)', borderRadius: 'var(--radius-sm)' }}
+                        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--c-border)'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
+                        aria-label="Alternar menú lateral"
+                    >☰</button>
                     <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontWeight: 'bold', fontSize: '14px' }}>{usuario.username || 'Despachante'}</div>
-                        <div style={{ fontSize: '12px', color: '#6b7280' }}>Usuario Autorizado</div>
+                        <div style={{ fontWeight: 600, fontSize: 'var(--fs-sm)', color: 'var(--c-text)' }}>{usuario.username || 'Despachante'}</div>
+                        <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--c-text-muted)' }}>Despachante autorizado</div>
                     </div>
                 </div>
 
                 {/* VISTAS */}
-                <div style={{ padding: '30px', flexGrow: 1 }}>
+                <div className="fade-in" style={{ padding: 'var(--sp-8)', flexGrow: 1 }}>
 
                     {/* INICIO */}
                     {vista === 'inicio' && (
                         <>
-                            <h1 style={{ margin: '0 0 5px 0', fontSize: '28px', color: '#111827' }}>Bienvenido a SISARM</h1>
-                            <p style={{ margin: '0 0 25px 0', color: '#6b7280' }}>Sistema de Clasificación Arancelaria y Gestión de Mercancías</p>
+                            <h1 style={{ margin: '0 0 6px 0', fontSize: 'var(--fs-2xl)', color: 'var(--c-text)', fontWeight: 700, letterSpacing: '-0.02em' }}>Bienvenido a SISARM</h1>
+                            <p style={{ margin: '0 0 var(--sp-6) 0', color: 'var(--c-text-muted)', fontSize: 'var(--fs-md)' }}>Sistema de Clasificación Arancelaria y Gestión de Mercancías</p>
 
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px', marginBottom: '30px' }}>
                                 <div style={{ backgroundColor: '#eff6ff', padding: '20px', borderRadius: '8px', borderLeft: '5px solid #3b82f6' }}>
@@ -166,13 +273,28 @@ function AppPrincipal() {
                             <Historial token={usuario.access} />
                         </>
                     )}
+                    {/* ASISTENTE IA — SIS-26 */}
+                    {vista === 'asistente' && (
+                        <AsistenteIA token={usuario.access} />
+                    )}
+
                     {/* VISTAS EN CONSTRUCCIÓN */}
-                    {['analizar', 'asistente', 'exportar'].includes(vista) && (
-                        <div style={{ textAlign: 'center', padding: '80px 20px', color: '#9ca3af' }}>
-                            <div style={{ fontSize: '48px', marginBottom: '16px' }}>🚧</div>
-                            <div style={{ fontSize: '20px', fontWeight: '600', color: '#374151', marginBottom: '8px' }}>Módulo en desarrollo</div>
-                            <div style={{ fontSize: '14px' }}>Esta funcionalidad estará disponible próximamente.</div>
-                            <button onClick={() => setVista('inicio')} style={{ marginTop: '20px', padding: '10px 24px', backgroundColor: '#3b82f6', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontSize: '14px' }}>
+                    {['analizar', 'exportar'].includes(vista) && (
+                        <div style={{ textAlign: 'center', padding: '80px 20px', color: 'var(--c-text-muted)' }}>
+                            <div style={{ fontSize: '48px', marginBottom: 'var(--sp-4)' }}>🚧</div>
+                            <div style={{ fontSize: 'var(--fs-xl)', fontWeight: 600, color: 'var(--c-text)', marginBottom: 'var(--sp-2)' }}>Módulo en desarrollo</div>
+                            <div style={{ fontSize: 'var(--fs-md)' }}>Esta funcionalidad estará disponible próximamente.</div>
+                            <button
+                                onClick={() => setVista('inicio')}
+                                style={{
+                                    marginTop: 'var(--sp-5)', padding: '10px 22px',
+                                    backgroundColor: 'var(--c-primary)', color: 'white',
+                                    border: 'none', borderRadius: 'var(--radius-sm)',
+                                    fontSize: 'var(--fs-md)', fontWeight: 600,
+                                }}
+                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--c-primary-hover)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--c-primary)'; }}
+                            >
                                 Volver al inicio
                             </button>
                         </div>
@@ -180,6 +302,15 @@ function AppPrincipal() {
 
                 </div>
             </div>
+
+            {/* HU 6.3 — Aviso de cierre por inactividad */}
+            {mostrarAviso && (
+                <AvisoInactividad
+                    segundos={segundosRestantes}
+                    onContinuar={mantenerActiva}
+                    onCerrar={forzarCierre}
+                />
+            )}
         </div>
     );
 }

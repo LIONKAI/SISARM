@@ -21,6 +21,7 @@ from .models import (
     DocumentoAdicional, PreferenciaArancelaria,
     HistorialConsulta, Favorito, PasswordResetToken
 )
+from .security import rate_limit  # HU 6.4 — rate limiting
 
 
 def quitar_acentos(texto):
@@ -55,6 +56,7 @@ def validar_username(valor):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
+@rate_limit(max_requests=10, ventana_seg=600, scope='registro')
 def registrar_usuario(request):
     username = (request.data.get('username') or '').strip()
     password = (request.data.get('password') or '').strip()
@@ -220,6 +222,7 @@ def explorador_subpartidas(request, partida):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
+@rate_limit(max_requests=5, ventana_seg=600, scope='recuperar')
 def solicitar_recuperacion(request):
     """
     Recibe un email. Si existe un usuario con ese email, genera un token
@@ -779,3 +782,221 @@ def registrar_consulta_partida(request):
         metadata={'descripcion': limpiar_descripcion(n.descripcion)[:200]},
     )
     return Response({'ok': True}, status=status.HTTP_201_CREATED)
+
+
+# ══════════════════════════════════════════════════════════════════════
+#  ASISTENTE IA — SIS-26: Clasificar por lenguaje natural
+# ══════════════════════════════════════════════════════════════════════
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def clasificar_lenguaje_natural(request):
+    """
+    HU SIS-26 — Clasificar una mercancía descrita en lenguaje natural
+    usando IA (Google Gemini).
+
+    Flujo:
+      1. Validar la descripción del usuario.
+      2. Pre-filtrar candidatos con búsqueda textual (mejora la precisión
+         del LLM y reduce tokens).
+      3. Pedir a Gemini que elija la mejor partida y justifique.
+      4. Enriquecer la sugerencia con datos completos de la BD.
+      5. Registrar en el historial (tipo IA_CLASIFIC).
+    """
+    from .gemini_service import (
+        clasificar_descripcion, GeminiNotConfigured, GeminiInvalidResponse,
+    )
+
+    descripcion = (request.data.get('descripcion') or '').strip()
+
+    # ── Validaciones de entrada ──
+    if not descripcion:
+        return Response(
+            {'error': 'Debe escribir una descripción de la mercancía.'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+    if len(descripcion) < 5:
+        return Response(
+            {'error': 'La descripción es demasiado corta (mínimo 5 caracteres).'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+    if len(descripcion) > 500:
+        return Response(
+            {'error': 'La descripción es demasiado larga (máximo 500 caracteres).'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    # ── 1. Pre-filtrar candidatos por coincidencia de palabras ──
+    desc_norm = quitar_acentos(descripcion)
+    palabras_clave = [p for p in desc_norm.split() if len(p) >= 4]
+
+    todas = NomenclaturaArancelaria.objects.filter(
+        is_leaf=True
+    ).select_related('capitulo')
+
+    candidatos_scored = []
+    for nom in todas:
+        desc_n = quitar_acentos(nom.descripcion or '')
+        score = sum(1 for p in palabras_clave if p in desc_n)
+        if score > 0:
+            candidatos_scored.append((score, nom))
+
+    candidatos_scored.sort(key=lambda x: -x[0])
+    top_candidatos = [n for _, n in candidatos_scored[:15]]
+
+    candidatos_payload = [{
+        'codigo_oficial': n.codigo_oficial,
+        'descripcion': limpiar_descripcion(n.descripcion)[:200],
+        'capitulo_desc': (n.capitulo.descripcion[:80] if n.capitulo else ''),
+    } for n in top_candidatos]
+
+    # ── 2. Pedir clasificación a Gemini ──
+    try:
+        sugerencia = clasificar_descripcion(descripcion, candidatos_payload)
+    except GeminiNotConfigured as e:
+        return Response(
+            {'error': str(e)},
+            status=status.HTTP_503_SERVICE_UNAVAILABLE,
+        )
+    except GeminiInvalidResponse as e:
+        return Response(
+            {'error': f'La IA devolvió una respuesta inválida. {str(e)}'},
+            status=status.HTTP_502_BAD_GATEWAY,
+        )
+    except Exception as e:
+        return Response(
+            {'error': f'Error al contactar el servicio de IA: {str(e)[:120]}'},
+            status=status.HTTP_502_BAD_GATEWAY,
+        )
+
+    # ── 3. Enriquecer con datos completos de la BD ──
+    codigo_sugerido = (sugerencia.get('codigo_sugerido') or '').strip()
+    detalle_partida = None
+    if codigo_sugerido:
+        nom = NomenclaturaArancelaria.objects.filter(
+            is_leaf=True, codigo_oficial=codigo_sugerido,
+        ).select_related('capitulo').first()
+        if nom:
+            ruta = []
+            nodo = nom.parent
+            while nodo:
+                if nodo.codigo_oficial:
+                    ruta.insert(0, nodo.codigo_oficial)
+                nodo = nodo.parent
+            detalle_partida = {
+                'id': nom.id,
+                'codigo_oficial': nom.codigo_oficial,
+                'descripcion': limpiar_descripcion(nom.descripcion),
+                'ruta': ' › '.join(ruta),
+                'ga_porcentaje': (
+                    str(nom.ga_porcentaje) if nom.ga_porcentaje is not None else '0'
+                ),
+                'unidad_medida': nom.unidad_medida,
+                'capitulo': nom.capitulo.codigo if nom.capitulo else None,
+                'capitulo_descripcion': nom.capitulo.descripcion if nom.capitulo else None,
+            }
+
+    # ── 4. Registrar en historial (auditoría HU 5.3) ──
+    registrar_historial(
+        request,
+        tipo='IA_CLASIFIC',
+        query=descripcion,
+        resultado_codigo=codigo_sugerido or None,
+        metadata={
+            'confianza': sugerencia.get('confianza'),
+            'justificacion': (sugerencia.get('justificacion') or '')[:300],
+            'alternativas_count': len(sugerencia.get('alternativas', []) or []),
+            'candidatos_evaluados': len(candidatos_payload),
+        },
+    )
+
+    return Response({
+        'descripcion_consultada': descripcion,
+        'sugerencia': sugerencia,
+        'detalle_partida': detalle_partida,
+    }, status=status.HTTP_200_OK)
+
+
+# ══════════════════════════════════════════════════════════════════════
+#  ASISTENTE CONVERSACIONAL — consolida SIS-26, SIS-27, SIS-14
+# ══════════════════════════════════════════════════════════════════════
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@rate_limit(max_requests=20, ventana_seg=60, scope='chat_ia')
+def chat_asistente_ia(request):
+    """
+    Chat conversacional con acceso a la BD del arancel via function calling.
+    Reemplaza la clasificacion natural, el resumen de notas y la comparacion
+    de partidas en una sola interfaz conversacional.
+
+    Espera: { "messages": [{"role": "user"|"assistant", "content": "..."}, ...] }
+    Devuelve: { "reply": "...", "tools_used": [...] }
+    """
+    from .chat_assistant import responder_chat, GeminiNotConfigured
+
+    messages = request.data.get('messages')
+    if not isinstance(messages, list) or not messages:
+        return Response(
+            {'error': 'Debe enviar una lista no vacia de mensajes.'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    if len(messages) > 30:
+        # Truncar para evitar prompts gigantes y abuso
+        messages = messages[-30:]
+
+    # Validar formato basico
+    for m in messages:
+        if not isinstance(m, dict):
+            return Response({'error': 'Mensaje invalido.'}, status=status.HTTP_400_BAD_REQUEST)
+        if m.get('role') not in ('user', 'assistant'):
+            return Response({'error': 'Role debe ser "user" o "assistant".'}, status=status.HTTP_400_BAD_REQUEST)
+        if not isinstance(m.get('content'), str):
+            return Response({'error': 'Content debe ser texto.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    if messages[-1].get('role') != 'user':
+        return Response(
+            {'error': 'El ultimo mensaje debe ser del usuario.'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    if len(messages[-1].get('content', '').strip()) < 1:
+        return Response(
+            {'error': 'El mensaje del usuario no puede estar vacio.'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    if len(messages[-1].get('content', '')) > 1000:
+        return Response(
+            {'error': 'El mensaje es demasiado largo (max 1000 caracteres).'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    try:
+        resultado = responder_chat(messages)
+    except GeminiNotConfigured as e:
+        return Response({'error': str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    except Exception as e:
+        return Response(
+            {'error': f'Error al contactar el servicio de IA: {str(e)[:140]}'},
+            status=status.HTTP_502_BAD_GATEWAY,
+        )
+
+    # Registrar en historial (audita la pregunta y herramientas usadas)
+    registrar_historial(
+        request,
+        tipo='IA_CLASIFIC',  # reutilizamos hasta crear un tipo CHAT especifico
+        query=messages[-1]['content'][:500],
+        resultado_codigo=None,
+        metadata={
+            'tools_used': resultado.get('tools_used', []),
+            'turnos_conversacion': len(messages),
+            'longitud_respuesta': len(resultado.get('reply', '')),
+        },
+    )
+
+    return Response({
+        'reply': resultado.get('reply', ''),
+        'tools_used': resultado.get('tools_used', []),
+    }, status=status.HTTP_200_OK)

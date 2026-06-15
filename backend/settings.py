@@ -62,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # HU 6.4 — Manejo global de excepciones sin exponer tracebacks (CWE-209)
+    'backend.middleware.GlobalExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
