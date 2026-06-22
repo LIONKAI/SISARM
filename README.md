@@ -1,8 +1,8 @@
 # SISARM — Sistema de Clasificación Arancelaria y Gestión de Mercancías
 
-Aplicación web full-stack para despachantes de aduana en Bolivia. Permite buscar mercancías en el Arancel Aduanero Boliviano, consultar documentación legal de respaldo, calcular tributos sobre valor CIF y gestionar acceso seguro mediante autenticación con recuperación de contraseña por email.
+Aplicación web full-stack para despachantes de aduana en Bolivia. Permite buscar mercancías en el Arancel Aduanero Boliviano, consultar documentación legal de respaldo, calcular tributos sobre valor CIF, gestionar acceso seguro mediante autenticación con recuperación de contraseña por email, e interactuar con un **Asistente IA conversacional** basado en Google Gemini que consulta directamente la base de datos del arancel mediante function calling.
 
-**Stack:** Django (backend) + React + Vite (frontend) + PostgreSQL.
+**Stack:** Django (backend) + React + Vite (frontend) + PostgreSQL + Google Gemini API (asistente IA).
 
 ---
 
@@ -256,7 +256,36 @@ Documentos:     303
 Preferencias:   2485
 ```
 
-### 6.4 Crear un superusuario
+### 6.4 Configurar la API key de Google Gemini (Asistente IA)
+
+El **Asistente IA conversacional** (HU 4.1) requiere una API key gratuita de Google AI Studio. Si no la configura, el resto del sistema (búsqueda, explorador, favoritos, historial) funciona normalmente pero el chat IA responde con error 503.
+
+**Obtener la key (5 minutos):**
+
+1. ⚠️ **Use una cuenta Gmail PERSONAL** (`tuusuario@gmail.com`). Las cuentas institucionales tipo `@unifranz.edu.bo` o de otras organizaciones tienen restricciones administrativas que bloquean el tier gratuito de Gemini.
+2. Vaya a [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey).
+3. Inicie sesión con su Gmail personal.
+4. Clic en **"Create API key"** → **"Create API key in new project"**.
+5. Copie el valor generado (comienza con `AIza...`).
+
+**Pegar la key en su `.env`:**
+
+Abra el archivo `.env` en la raíz del proyecto y reemplace la línea del Gemini:
+
+```
+GEMINI_API_KEY=AIzaSy...su-key-real-aqui
+```
+
+Guarde el archivo. Si Django ya está corriendo, reinícielo (Ctrl+C y `python manage.py runserver 8080`) para que tome la nueva variable.
+
+**Verificar que funciona:**
+
+1. Abra el frontend en el navegador.
+2. Inicie sesión, menú lateral → **⚡ Asistente IA**.
+3. Pruebe con un prompt sugerido como "¿Qué capítulos del arancel tiene cargados el sistema?".
+4. La IA debe responder consultando la base de datos real (verá la etiqueta "🔍 Consultó: listado de capítulos" al final de la respuesta).
+
+### 6.5 Crear un superusuario
 
 ```
 python manage.py createsuperuser
@@ -402,7 +431,7 @@ Cuando termine, presione **Ctrl+C** en cada terminal por separado. Las dependenc
 
 ## 9. Credenciales de prueba
 
-Use el superusuario que creó en el paso 6.4, o cree un usuario nuevo desde la pantalla de registro de la aplicación.
+Use el superusuario que creó en el paso 6.5, o cree un usuario nuevo desde la pantalla de registro de la aplicación.
 
 **Reglas de validación del registro (HU 1.1 v2):**
 - Usuario: 3-20 caracteres, sin espacios. Solo letras, números, "_", "." y "-".
@@ -474,6 +503,15 @@ Verifique que `VITE_API_URL=http://127.0.0.1:8080/api` esté en `frontend/.env` 
 
 **No llega el email de recuperación:**
 Verifique que la "contraseña de aplicación" de Gmail esté correctamente generada y copiada sin espacios en `.env`. Revise la carpeta de Spam en su correo.
+
+**El Asistente IA responde "429 quota exceeded" inmediatamente:**
+Está usando una cuenta Google institucional (`@unifranz.edu.bo` u otra de organización) que tiene la API restringida. Genere una nueva key con una **cuenta Gmail personal** y reemplácela en `.env`. Ver paso 6.4.
+
+**El Asistente IA responde "404 model ... not found":**
+El modelo configurado no está disponible en su key. En el `.env`, descomente la línea `GEMINI_MODEL=` y pruebe con `gemini-2.0-flash` o `gemini-flash-latest`. Reinicie Django después del cambio.
+
+**El Asistente IA responde "503 servicio no configurado":**
+Falta la variable `GEMINI_API_KEY` en `.env` o está vacía. Siga el paso 6.4 del README para obtener y configurar la key.
 
 **`npm install` responde "ENOENT package.json no encontrado":**
 Está ejecutando el comando desde la carpeta equivocada. `npm install` solo funciona **dentro de `SISARM/frontend/`**, donde está el `package.json` del frontend. Ejecute `cd frontend` desde la raíz del proyecto y vuelva a intentar.

@@ -58,6 +58,9 @@ dependencies:
       # Generación de PDFs (reportes, comprobantes)
       - reportlab==4.5.1
 
+      # Asistente IA — Google Gemini (SIS-26, SIS-27, SIS-14)
+      - google-generativeai==0.8.5
+
       # Procesamiento de datos (carga de aranceles desde JSON/Excel)
       - pandas==3.0.3
       - numpy==2.4.6
